@@ -27,25 +27,25 @@ const Navbar = () => {
                         <li><button className='btn btn-error text-white font-bold'>Get A Demo</button></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost p-0"><img src={logo} style={{ height: "50px" }} alt="" /></a>
+                <a class="btn btn-ghost hover:-translate-y-1 hover:scale-90 p-0"><img src={logo} style={{ height: "50px" }} alt="" /></a>
             </div>
             <div class="navbar-center font-bold hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">
-                    <li><a>Customers</a></li>
-                    <li tabindex="0">
+                <ul class="menu menu-horizontal  p-0">
+                    <li className='hover:-translate-y-1 hover:scale-90'><a>Customers</a></li>
+                    <li className='hover:-translate-y-1 hover:scale-90' tabindex="0">
                         <a>
                             Product
                             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                         </a>
-                        <ul class="p-2">
+                        <ul class="p-2 hover:-translate-y-1 hover:scale-90">
                             <li><a>Overview</a></li>
                             <li><a>Review and Check in</a></li>
                             <li><a>Other Features</a></li>
                         </ul>
                     </li>
-                    <li><a>Pricing</a></li>
-                    <li><a>Resources</a></li>
-                    <li><button className='btn btn-error text-white font-bold'>Get A Demo</button></li>
+                    <li className=" hover:-translate-y-1 hover:scale-90"><a href>Pricing</a></li>
+                    <li className=" hover:-translate-y-1 hover:scale-90"><a>Resources</a></li>
+                    <li><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></li>
                 </ul>
             </div>
             <div class="navbar-end">
