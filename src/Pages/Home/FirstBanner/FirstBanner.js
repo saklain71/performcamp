@@ -11,6 +11,7 @@ const FirstBanner = () => {
                 <div className=''>
                     <h1 class="lg:text-4xl text-3xl font-bold">Performance Management <br /> that's easy for Everyone</h1>
                     <p class="py-6">For annual reviews, quarterly goals, continuous feedback and everything in between, PerformCamp offers flexible features for HR and creates a simple employee experience. Get a better experience.</p>
+                    <p>Hello</p>
                     <button className='btn btn-error lg:w-36 w-full text-white font-bold'>Get A Demo</button>
                 </div>
             </div>
