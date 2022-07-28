@@ -1,7 +1,16 @@
 import React from 'react';
-import logo from '../../../Image/Copy_of_perform-removebg-preview.png'
+import logo from '../../../Image/Copy_of_perform-removebg-preview.png';
+import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const handleSignOut = () =>{
+        signOut(auth);
+        
+      }
     return (
         <div class="navbar bg-base-100 p-10">
             <div class="navbar-start">
@@ -49,8 +58,24 @@ const Navbar = () => {
                 </ul>
             </div>
             <div class="navbar-end">
-                <button className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button>
+                {
+                       user 
+                       ? 
+                       <div>
+                         
+                         <button onClick={handleSignOut} className="btn btn-outline rounded-full lg:px-7 font-bold"> Sign Out</button>
+                       </div>  
+                
+                       :
+                       <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link>
+                }
+                
             </div>
+            {/* user
+                    ? 
+                    <Link to="/login"><button className='btn btn-outline rounded-full lg:px-7 font-bold'>Sign Out</button></Link>
+                    :
+                    <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link> */}
         </div>
     );
 };
