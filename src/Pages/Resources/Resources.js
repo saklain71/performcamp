@@ -11,6 +11,7 @@ import resource_9 from '../../Image/resource_image/resource_img_9.jpg'
 import resource_10 from '../../Image/resource_image/resource_img_10.jpeg'
 import resource_11 from '../../Image/resource_image/resource_img_11.jpg'
 import resource_12 from '../../Image/resource_image/resource_img_12.jpg'
+import FourthBanner from '../Home/FourthBanner/FourthBanner';
 const Resources = () => {
     return (
         <div className=''>
@@ -214,7 +215,9 @@ In one survey, just 14% of employees</p>
   <input type="radio" name="options" data-title="3" class="btn hover:checked btn-error" />
   <input type="radio" name="options" data-title="4" class="btn hover:checked btn-error" />
 </div>
+<FourthBanner></FourthBanner>
         </div>
+        
         
     );
 };
