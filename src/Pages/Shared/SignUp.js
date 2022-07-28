@@ -1,12 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import Loading from './Loading';
-
-
+import google from '../../Image/google.png';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -17,10 +16,8 @@ const SignUp = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification : true});
-      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
       const navigate = useNavigate();
     
-
       let signInError;
     
      if(user || gUser){
@@ -28,11 +25,11 @@ const SignUp = () => {
      }
 
   
-      if(loading || gLoading || updating){
+      if(loading || gLoading){
           return <Loading></Loading>
       }
 
-    if(error || gError || updateError){
+    if(error || gError){
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
@@ -40,7 +37,6 @@ const SignUp = () => {
         console.log(data);
        if(data.password === data.confirmPassword){
         await createUserWithEmailAndPassword(data.email, data.password);
-        await updateProfile({ displayName: data.name});
        }
        else{
            toast.error("two password didn't match");
@@ -49,10 +45,10 @@ const SignUp = () => {
 
    
     return (
-        <div className='flex h-screen items-center justify-center bg-gradient-to-r from-blue-300 to-fuchsia-300'>
-            <div className="card w-1/4 bg-base-100 shadow-xl">
-                <div className="card-body bg-yellow-100">
-                    <h2 className="text-center text-xl mx:text-2xl lg:text-3xl font-bold text-blue-700">Register</h2>
+        <div className='flex h-screen items-center justify-center bg-base-100 pb-4 lg:pb-8'>
+            <div className="card w-11/12 lg:w-1/4  bg-base-100 shadow-xl">
+                <div className="card-body bg-gradient-to-r from-yellow-100 to-fuchsia-200">
+                    <h2 className="text-center text-xl mx:text-2xl lg:text-3xl font-bold text-blue-700">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         
                         <div className="form-control w-full max-w-xs">
@@ -133,13 +129,13 @@ const SignUp = () => {
                         </div>
                  
                          {signInError}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Register"/>
+                        <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up"/>
                     </form>
                    
-                    <p><small>Already have an account? </small><Link className='text-blue-500' to="/login">Please Login</Link></p>
+                    <p className='py-1'>Already have an account? <Link className='text-blue-500' to="/login">Please Login</Link></p>
 
                     <div className="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue With Google</button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-outline"><img className='w-8 h-8' src={google} alt="" /> Continue With Google</button>
 
                 </div>
             </div>

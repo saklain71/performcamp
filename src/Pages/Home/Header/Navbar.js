@@ -36,7 +36,7 @@ const Navbar = () => {
                         <li><button className='btn btn-error text-white font-bold'>Get A Demo</button></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost hover:-translate-y-1 hover:scale-90 p-0"><img src={logo} style={{ height: "50px" }} alt="" /></a>
+              <Link to="/home"><a class="btn btn-ghost hover:-translate-y-1 hover:scale-90 p-0"><img src={logo} style={{ height: "50px" }} alt="" /></a></Link>
             </div>
             <div class="navbar-center font-bold hidden lg:flex">
                 <ul class="menu menu-horizontal  p-0">
@@ -71,11 +71,7 @@ const Navbar = () => {
                 }
                 
             </div>
-            {/* user
-                    ? 
-                    <Link to="/login"><button className='btn btn-outline rounded-full lg:px-7 font-bold'>Sign Out</button></Link>
-                    :
-                    <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link> */}
+        
         </div>
     );
 };
