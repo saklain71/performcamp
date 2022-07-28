@@ -1,26 +1,25 @@
-
 import './App.css';
 import Navbar from './Pages/Home/Header/Navbar';
 import Footer from './Pages/Home/Footer/Footer';
 import Home from './Pages/Home/Home';
-import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
-
-
+import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Login from './Pages/Shared/Login';
+import SignUp from './Pages/Shared/SignUp';
 
 function App() {
   return (
     <div>
-      <Router>
-      <Navbar/>
+      <Navbar></Navbar>
       <Routes>
-        <Route exact path="/" element={<Home/>} />
+        <Route exact path='/' element={<Home />}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/signUp' element={<SignUp />}></Route>
       </Routes>
-      <Routes>
-        <Route path="/home" element={<Home/>} />
-      </Routes>
-      
-      <Footer/>
-      </Router>
+      <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }
