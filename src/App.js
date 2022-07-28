@@ -4,6 +4,7 @@ import Navbar from './Pages/Home/Header/Navbar';
 import Footer from './Pages/Home/Footer/Footer';
 import Home from './Pages/Home/Home';
 import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
+import Resources from './Pages/Resources/Resources';
 
 
 
@@ -14,6 +15,12 @@ function App() {
       <Navbar/>
       <Routes>
         <Route exact path="/" element={<Home/>} />
+      </Routes>
+      <Routes>
+        <Route path="/home" element={<Home/>} />
+      </Routes>
+      <Routes>
+        <Route path="/resources" element={<Resources/>} />
       </Routes>
       <Routes>
         <Route path="/home" element={<Home/>} />
