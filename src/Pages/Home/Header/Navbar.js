@@ -32,7 +32,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li><a>Pricing</a></li>
-                        <li><a>Resources</a></li>
+                        <li><a href='/resources'>Resources</a></li>
                         <li><button className='btn btn-error text-white font-bold'>Get A Demo</button></li>
                     </ul>
                 </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
                         </ul>
                     </li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href>Pricing</a></li>
-                    <li className=" hover:-translate-y-1 hover:scale-90"><a>Resources</a></li>
+                    <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
                     <li><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></li>
                 </ul>
             </div>

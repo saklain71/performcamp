@@ -2,6 +2,7 @@ import React from 'react';
 import Companies from './Companies/Companies';
 import FeaturesCard from './FeaturesCard/FeaturesCard';
 import FirstBanner from './FirstBanner/FirstBanner';
+import FourthBanner from './FourthBanner/FourthBanner';
 
 import SecondBanner from './SecondBanner/SecondBanner';
 import SetGoals from './SetGoals/SetGoals';
@@ -17,6 +18,7 @@ const Home = () => {
             <ThirdBanner></ThirdBanner>
             <SetGoals></SetGoals>
             <FeaturesCard></FeaturesCard>
+            <FourthBanner></FourthBanner>
         </div>
     );
 };
