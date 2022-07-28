@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../../Image/Copy_of_perform-removebg-preview.png'
 
 const Navbar = () => {
@@ -19,6 +20,8 @@ const Navbar = () => {
                             <ul class="p-2">
                                 <li><a>Overview</a></li>
                                 <li><a>Review and Check in</a></li>
+                                <li><a>Goal Management</a></li>
+                                <li><a>Continuous Feedback</a></li>
                                 <li><a>Other Features</a></li>
                             </ul>
                         </li>
@@ -37,10 +40,12 @@ const Navbar = () => {
                             Product
                             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                         </a>
-                        <ul class="p-2 hover:-translate-y-1 hover:scale-90">
-                            <li><a>Overview</a></li>
-                            <li><a>Review and Check in</a></li>
-                            <li><a>Other Features</a></li>
+                        <ul class="p-2 hover:-translate-y-1 bg-white hover:scale-90">
+                            <li className='text-gray-500'><Link to="/overview">Overview</Link></li>
+                            <li className='text-gray-500'><Link to="/reviewCheckin">Review and Check in</Link></li>
+                            <li className='text-gray-500'><Link to="/goalManagement">Goal Management</Link></li>
+                            <li className='text-gray-500'><Link to="/continuousFeedback">Continuous Feedback</Link></li>
+                            <li className='text-gray-500'><Link to="/otherFeatures">Other Features</Link></li>
                         </ul>
                     </li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href>Pricing</a></li>
