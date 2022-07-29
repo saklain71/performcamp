@@ -1,8 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../Image/Copy_of_perform-removebg-preview.png'
+import logo from '../../../Image/Copy_of_perform-removebg-preview.png';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const handleSignOut = () =>{
+        signOut(auth);        
+      }
     return (
         <div class="navbar bg-base-100 p-10">
             <div class="navbar-start">
@@ -26,7 +33,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li><a>Pricing</a></li>
-                        <li><a>Resources</a></li>
+                        <li><a href='/resources'>Resources</a></li>
                         <li><button className='btn btn-error text-white font-bold'>Get A Demo</button></li>
                     </ul>
                 </div>
@@ -48,14 +55,26 @@ const Navbar = () => {
                             <li className='text-gray-500'><Link to="/otherFeatures">Other Features</Link></li>
                         </ul>
                     </li>
-                    <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
-                    <li className=" hover:-translate-y-1 hover:scale-90"><a>Resources</a></li>
+                    <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>            
+                    <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
                     <li><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></li>
                 </ul>
             </div>
             <div class="navbar-end">
-                <button className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button>
+                {
+                       user 
+                       ? 
+                       <div>
+                         
+                         <button onClick={handleSignOut} className="btn btn-outline rounded-full lg:px-7 font-bold"> Sign Out</button>
+                       </div>  
+                
+                       :
+                       <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link>
+                }
+                
             </div>
+        
         </div>
     );
 };

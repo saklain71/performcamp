@@ -3,12 +3,22 @@ import img1 from '../../../../Image/rImg1.png'
 import img2 from '../../../../Image/rImg2.png'
 import img3 from '../../../../Image/rImg3.png'
 import img4 from '../../../../Image/rImg4.png'
+import background_1 from '../../../../Image/background_image/Copy of background_image_1.png'
 
 
 const ReviewCheckin = () => {
     return (
         <div className='container p-5'>
-             <div class="hero min-h-screen">
+            <div class="pt-10 bg-gradient-to-tl from-slate-50 to-slate-100  h-96 w-full" >
+                <div class="hero-content text-center lg:px-12">
+                    <div class="lg:mx-10">
+                        <h1 className='text-4xl font-semibold'>Performance Reviews & Check-Ins</h1>
+                        <p class="text-xl whitespace-normal py-6">Run timely and efficient review cycles. PerformYard facilitates any review process, across any frequency and with customizable inputs. Access our best practice review questions, forms, and templates to drive success.</p>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'>Get A Demo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero min-h-screen">
                 <div class="hero-content flex-col lg:flex-row">
                     <img src={img1} class="lg:max-w-lg rounded-lg shadow-2xl" alt="" />
                     <div className=''>
@@ -45,6 +55,15 @@ const ReviewCheckin = () => {
                     <div className=''>
                         <h1 class="text-4xl font-bold">Analyze & Visualize Results</h1>
                         <p class="py-6 text-xl">Dive into the results of your review processes, comparing employee performance through a variety of visuals and exports that enable the analysis that HR teams need. PerformYard reporting allows for simple calibration analysis so that top performers are identified and rewarded.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero bg-gradient-to-tl from-slate-50 to-slate-100  h-96 w-full relative" >
+                <img src={background_1} class="w-full h-96 absolute rounded-lg mx-6" alt='' />
+                <div class="hero-content text-center lg:px-12">
+                    <div class="lg:mx-10">
+                        <p class="text-xl whitespace-normal lg:font-bold font-semibold py-6">See how PerformCamp can streamline your review or check-in process.</p>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error w-40 text-white font-bold'>Get A Demo</button>
                     </div>
                 </div>
             </div>

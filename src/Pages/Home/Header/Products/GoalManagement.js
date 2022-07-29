@@ -3,10 +3,20 @@ import img1 from '../../../../Image/gImg1.png'
 import img2 from '../../../../Image/gImg2.png'
 import img3 from '../../../../Image/gImg3.png'
 import img4 from '../../../../Image/gImg4.png'
+import background_1 from '../../../../Image/background_image/background_image_1.png'
 
 const GoalManagement = () => {
     return (
         <div className='container p-5'>
+            <div class="pt-10 bg-gradient-to-tl from-slate-50 to-slate-100  h-96 w-full" >
+                <div class="hero-content text-center lg:px-12">
+                    <div class="lg:mx-10">
+                        <h1 className='text-4xl font-semibold'>Goal Management</h1>
+                        <p class="text-xl whitespace-normal py-6">Goals and objectives should be dynamic and update as business priorities change. In PerformYard, you will gain insight into goal progress, breaking them down into manageable parts that can be achieved and communicated to others.</p>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'>Get A Demo</button>
+                    </div>
+                </div>
+            </div>
             <div class="hero min-h-screen">
                 <div class="hero-content flex-col lg:flex-row">
                     <img src={img1} class="lg:max-w-lg rounded-lg" alt="" />
@@ -44,6 +54,15 @@ const GoalManagement = () => {
                     <div className=''>
                         <h1 class="text-4xl font-bold">Gather Performance Insights</h1>
                         <p class="py-6 text-xl">Learn where your team is excelling, and where you might be falling off track, with the visibility provided by updates, rollups and influences. Use these insights to adjust resources and change direction, all while keeping your eyes on the prize.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero bg-gradient-to-tl from-slate-50 to-slate-100  h-96 w-full relative" >
+                <img src={background_1} class="w-full h-96 absolute rounded-lg mx-6" alt='' />
+                <div class="hero-content text-center lg:px-12">
+                    <div class="lg:mx-10">
+                        <p class="text-xl whitespace-normal lg:font-bold font-semibold py-6">See how easy it is to manage your organization's goals in PerformCamp.</p>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error w-40 text-white font-bold'>Get A Demo</button>
                     </div>
                 </div>
             </div>
