@@ -4,6 +4,7 @@ import goal from '../../../Image/Goals.svg';
 import feedback from '../../../Image/feedback.svg';
 import Card from './Card';
 
+
 const FeaturesCard = () => {
     const reviews = [
         {
@@ -26,15 +27,19 @@ const FeaturesCard = () => {
         }
     ]
     return (
-        <section className='lg:p-20'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+        <section className=''>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:p-20 gap-5'>
                 {
                     reviews.map(review => <Card
                         key={review._id} review={review}
                     ></Card>)
                 }
             </div>
+
+            
+
         </section>
+        
     );
 };
 
