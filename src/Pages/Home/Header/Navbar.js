@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../../../Image/Copy_of_perform-removebg-preview.png';
 import { Link } from 'react-router-dom';
+import logo from '../../../Image/Copy_of_perform-removebg-preview.png';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
@@ -8,8 +8,7 @@ import { signOut } from 'firebase/auth';
 const Navbar = () => {
     const [user] = useAuthState(auth);
     const handleSignOut = () =>{
-        signOut(auth);
-        
+        signOut(auth);        
       }
     return (
         <div class="navbar bg-base-100 p-10">
@@ -28,6 +27,8 @@ const Navbar = () => {
                             <ul class="p-2">
                                 <li><a>Overview</a></li>
                                 <li><a>Review and Check in</a></li>
+                                <li><a>Goal Management</a></li>
+                                <li><a>Continuous Feedback</a></li>
                                 <li><a>Other Features</a></li>
                             </ul>
                         </li>
@@ -36,7 +37,7 @@ const Navbar = () => {
                         <li><button className='btn btn-error text-white font-bold'>Get A Demo</button></li>
                     </ul>
                 </div>
-              <Link to="/home"><a class="btn btn-ghost hover:-translate-y-1 hover:scale-90 p-0"><img src={logo} style={{ height: "50px" }} alt="" /></a></Link>
+                <Link to="/" class="btn btn-ghost hover:-translate-y-1 hover:scale-90 p-0"><img src={logo} style={{ height: "50px" }} alt="" /></Link>
             </div>
             <div class="navbar-center font-bold hidden lg:flex">
                 <ul class="menu menu-horizontal  p-0">
@@ -46,13 +47,15 @@ const Navbar = () => {
                             Product
                             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                         </a>
-                        <ul class="p-2 hover:-translate-y-1 hover:scale-90">
-                            <li><a>Overview</a></li>
-                            <li><a>Review and Check in</a></li>
-                            <li><a>Other Features</a></li>
+                        <ul class="p-2 hover:-translate-y-1 bg-white hover:scale-90">
+                            <li className='text-gray-500'><Link to="/overview">Overview</Link></li>
+                            <li className='text-gray-500'><Link to="/reviewCheckin">Review and Check in</Link></li>
+                            <li className='text-gray-500'><Link to="/goalManagement">Goal Management</Link></li>
+                            <li className='text-gray-500'><Link to="/continuousFeedback">Continuous Feedback</Link></li>
+                            <li className='text-gray-500'><Link to="/otherFeatures">Other Features</Link></li>
                         </ul>
                     </li>
-                    <li className=" hover:-translate-y-1 hover:scale-90"><a href>Pricing</a></li>
+                    <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>            
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
                     <li><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></li>
                 </ul>
