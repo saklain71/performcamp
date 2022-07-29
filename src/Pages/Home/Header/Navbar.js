@@ -30,7 +30,7 @@ const Navbar = () => {
                         <li><button className='btn btn-error text-white font-bold'>Get A Demo</button></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost hover:-translate-y-1 hover:scale-90 p-0"><img src={logo} style={{ height: "50px" }} alt="" /></a>
+                <Link to="/" class="btn btn-ghost hover:-translate-y-1 hover:scale-90 p-0"><img src={logo} style={{ height: "50px" }} alt="" /></Link>
             </div>
             <div class="navbar-center font-bold hidden lg:flex">
                 <ul class="menu menu-horizontal  p-0">
@@ -48,7 +48,7 @@ const Navbar = () => {
                             <li className='text-gray-500'><Link to="/otherFeatures">Other Features</Link></li>
                         </ul>
                     </li>
-                    <li className=" hover:-translate-y-1 hover:scale-90"><a href>Pricing</a></li>
+                    <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a>Resources</a></li>
                     <li><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></li>
                 </ul>

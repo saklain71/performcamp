@@ -1,9 +1,9 @@
 import React from 'react';
-import img1 from '../../Image/cimg1.png'
-import img2 from '../../Image/cimg2.png'
-import img3 from '../../Image/cimg3.png'
-import img4 from '../../Image/cimg4.png'
-import img5 from '../../Image/cimg5.png'
+import img1 from '../../../../Image/cimg1.png'
+import img2 from '../../../../Image/cimg2.png'
+import img3 from '../../../../Image/cimg3.png'
+import img4 from '../../../../Image/cimg4.png'
+import img5 from '../../../../Image/cimg5.png'
 
 const ContinuousFeedback = () => {
     return (

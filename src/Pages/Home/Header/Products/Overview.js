@@ -1,7 +1,7 @@
 import React from 'react';
-import FeaturesCard from '../Home/FeaturesCard/FeaturesCard';
-import img1 from '../../Image/oViewBanner1.png'
-import img2 from '../../Image/oViewBanner2.png'
+import FeaturesCard from '../../FeaturesCard/FeaturesCard';
+import img1 from '../../../../Image/oViewBanner1.png'
+import img2 from '../../../../Image/oViewBanner2.png'
 
 
 const Overview = () => {

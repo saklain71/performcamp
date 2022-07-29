@@ -1,8 +1,8 @@
 import React from 'react';
-import img1 from '../../Image/rImg1.png'
-import img2 from '../../Image/rImg2.png'
-import img3 from '../../Image/rImg3.png'
-import img4 from '../../Image/rImg4.png'
+import img1 from '../../../../Image/rImg1.png'
+import img2 from '../../../../Image/rImg2.png'
+import img3 from '../../../../Image/rImg3.png'
+import img4 from '../../../../Image/rImg4.png'
 
 
 const ReviewCheckin = () => {

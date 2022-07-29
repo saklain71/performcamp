@@ -1,8 +1,8 @@
 import React from 'react';
-import img1 from '../../Image/gImg1.png'
-import img2 from '../../Image/gImg2.png'
-import img3 from '../../Image/gImg3.png'
-import img4 from '../../Image/gImg4.png'
+import img1 from '../../../../Image/gImg1.png'
+import img2 from '../../../../Image/gImg2.png'
+import img3 from '../../../../Image/gImg3.png'
+import img4 from '../../../../Image/gImg4.png'
 
 const GoalManagement = () => {
     return (
