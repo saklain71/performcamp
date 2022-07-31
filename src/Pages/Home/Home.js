@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomerReview from '../CustomerReview/CustomerReview';
 import Companies from './Companies/Companies';
 import FeaturesCard from './FeaturesCard/FeaturesCard';
 import FirstBanner from './FirstBanner/FirstBanner';
@@ -18,6 +19,7 @@ const Home = () => {
             <ThirdBanner></ThirdBanner>
             <SetGoals></SetGoals>
             <FeaturesCard></FeaturesCard>
+            <CustomerReview></CustomerReview>
             <FourthBanner></FourthBanner>
         </div>
     );
