@@ -47,7 +47,7 @@ const Navbar = () => {
                             Product
                             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                         </a>
-                        <ul class="p-2 hover:-translate-y-1 bg-white hover:scale-90">
+                        <ul class="p-2 bg-white">
                             <li className='text-gray-500'><Link to="/overview">Overview</Link></li>
                             <li className='text-gray-500'><Link to="/reviewCheckin">Review and Check in</Link></li>
                             <li className='text-gray-500'><Link to="/goalManagement">Goal Management</Link></li>

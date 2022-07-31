@@ -22,7 +22,7 @@ const Resources = () => {
             </div>
             <div class="card lg:card-side  lg:px-36 bg-base-100 ">
   <figure><img className=' md:w-96 lg:w-96 rounded-l-lg' src={resource_1} alt="Album"/></figure>
-  <div class="card-body  rounded-lg shadow-2xl">
+  <div class="card-body bg-amber-100 rounded-lg shadow-2xl">
     <h2 class="card-title font-bold py-4">The Purpose of Performance Management: 5 Options</h2>
     <p>Performance Management is a big idea. We’re talking about improving the performance of every employee at your organization.</p>
     <button class="btn btn-link font-bold text-blue-400 hover:no-underline text-xl">Continue Reading <svg xmlns="http://www.w3.org/2000/svg" className="transition transform hover:-translate-x-1  h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

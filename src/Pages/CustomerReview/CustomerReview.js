@@ -45,11 +45,11 @@ const CustomerReview = () => {
   }}  className="mySwiper h-96">
  {
      displayReviews.map(review=><SwiperSlide key={review.id}>
-    <div className="relative text-center  bg-base-100 shadow-xl justify-center space-y-4 rounded-md bg-gray-900 p-10 text-white "> <span className="absolute left-3/4 top-16  text-3xl text-gray-600">{quoteRight}</span>
+    <div className="relative text-center bg-amber-100 shadow-xl justify-center space-y-4 rounded-md bg-gray-900 p-10 text-white "> <span className="absolute left-3/4 top-16  text-3xl text-gray-600">{quoteRight}</span>
     <span className="absolute left-10 top-3/4 text-3xl text-gray-600">{quoteLeft}</span>
    <div className="flex justify-center "> <div className="w-24 border-2 border-red-500 h-24 rounded-full   overflow-hidden"> <img src={review.pic} alt="" /></div></div>
       <h2 className='text-4xl text-black'>{review.name}</h2>
-      <p className='p-5 text-blue-400'>{review.description}</p>
+      <p className='p-5 text-rose-600'>{review.description}</p>
       <div className="flex justify-center">
      
    <RatingView ratingValue={review.rating} /* Rating Props */ />
