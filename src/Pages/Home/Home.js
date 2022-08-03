@@ -1,9 +1,10 @@
 import React from 'react';
-import CustomerReview from '../CustomerReview/CustomerReview';
+import CustomerReview from '../CustomerReview/CustomerReview'
 import Companies from './Companies/Companies';
 import FeaturesCard from './FeaturesCard/FeaturesCard';
 import FirstBanner from './FirstBanner/FirstBanner';
 import FourthBanner from './FourthBanner/FourthBanner';
+import HappyClient from './HappyCompanies/HappyCompanies';
 
 import SecondBanner from './SecondBanner/SecondBanner';
 import SetGoals from './SetGoals/SetGoals';
@@ -19,6 +20,8 @@ const Home = () => {
             <ThirdBanner></ThirdBanner>
             <SetGoals></SetGoals>
             <FeaturesCard></FeaturesCard>
+            
+            <HappyClient></HappyClient>
             <CustomerReview></CustomerReview>
             <FourthBanner></FourthBanner>
         </div>

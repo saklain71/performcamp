@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import ReviewCheckin from './Pages/Home/Header/Products/ReviewCheckin';
 import GoalManagement from './Pages/Home/Header/Products/GoalManagement';
 import ContinuousFeedback from './Pages/Home/Header/Products/ContinuousFeedback';
-import OtherFeatures from './Pages/Home/Header/Products/OtherFeatures';
+
 import Pricing from './Pages/Home/Header/Pricing';
 
 import { ToastContainer } from 'react-toastify';
@@ -35,7 +35,7 @@ function App() {
         <Route path="/reviewCheckin" element={<ReviewCheckin />} />
         <Route path="/goalManagement" element={<GoalManagement />} />
         <Route path="/continuousFeedback" element={<ContinuousFeedback />} />
-        <Route path="/otherFeatures" element={<OtherFeatures />} />
+        
         <Route path="/pricing" element={<Pricing />} />
         <Route path='/resources' element={<Resources />}></Route>
         <Route path='/login' element={<Login />}></Route>
