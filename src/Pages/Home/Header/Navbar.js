@@ -7,9 +7,9 @@ import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
-    const handleSignOut = () =>{
-        signOut(auth);        
-      }
+    const handleSignOut = () => {
+        signOut(auth);
+    }
     return (
         <div class="navbar bg-base-100 p-10">
             <div class="navbar-start">
@@ -24,16 +24,15 @@ const Navbar = () => {
                                 Product
                                 <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                             </a>
-                            <ul class="p-2">
-                                <li><a>Overview</a></li>
-                                <li><a>Review and Check in</a></li>
-                                <li><a>Goal Management</a></li>
-                                <li><a>Continuous Feedback</a></li>
-                                <li><a>Other Features</a></li>
+                            <ul class="p-2 hover:-translate-y-1 bg-white hover:scale-90">
+                                <li className='text-gray-500'><Link to="/overview">Overview</Link></li>
+                                <li className='text-gray-500'><Link to="/reviewCheckin">Review and Check in</Link></li>
+                                <li className='text-gray-500'><Link to="/goalManagement">Goal Management</Link></li>
+                                <li className='text-gray-500'><Link to="/continuousFeedback">Continuous Feedback</Link></li>
                             </ul>
                         </li>
-                        <li><a>Pricing</a></li>
-                        <li><a href='/resources'>Resources</a></li>
+                        <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
+                    <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
                         <li><button className='btn btn-error text-white font-bold'>Get A Demo</button></li>
                     </ul>
                 </div>
@@ -52,29 +51,28 @@ const Navbar = () => {
                             <li className='text-gray-500'><Link to="/reviewCheckin">Review and Check in</Link></li>
                             <li className='text-gray-500'><Link to="/goalManagement">Goal Management</Link></li>
                             <li className='text-gray-500'><Link to="/continuousFeedback">Continuous Feedback</Link></li>
-                            <li className='text-gray-500'><Link to="/otherFeatures">Other Features</Link></li>
                         </ul>
                     </li>
-                    <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>            
+                    <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
                     <li><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></li>
                 </ul>
             </div>
             <div class="navbar-end">
                 {
-                       user 
-                       ? 
-                       <div>
-                         
-                         <button onClick={handleSignOut} className="btn btn-outline rounded-full lg:px-7 font-bold"> Sign Out</button>
-                       </div>  
-                
-                       :
-                       <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link>
+                    user
+                        ?
+                        <div>
+
+                            <button onClick={handleSignOut} className="btn btn-outline rounded-full lg:px-7 font-bold"> Sign Out</button>
+                        </div>
+
+                        :
+                        <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link>
                 }
-                
+
             </div>
-        
+
         </div>
     );
 };
