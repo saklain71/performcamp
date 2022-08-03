@@ -18,8 +18,8 @@ const ContinuousFeedback = () => {
                     </div>
                 </div>
             </div>
-            <div class="hero min-h-screen">
-                <div class="hero-content flex-col lg:flex-row">
+            <div class="hero min-h-screen mt-5">
+                <div class="hero-content flex-col  lg:flex-row">
                     <img src={img1} class="lg:max-w-lg rounded-lg" alt="" />
                     <div className=''>
                         <h1 class="text-4xl font-bold">Recognize Outstanding Performances</h1>

@@ -18,9 +18,9 @@ const Overview = () => {
             <div class="hero min-h-screen lg:p-20">
                 <div class="hero-content flex-col lg:flex-row">
                     <img src={img1} class="lg:max-w-lg rounded-lg shadow-2xl" alt="" />
-                    <div className=''>
+                    <div className='mt-5'>
                         <h1 class="text-5xl font-bold">360 Reviews</h1>
-                        <p class="py-6 text-xl">Incorporate feedback from across the organization. Employee reviews can include self assessments, feedback from direct reports, and multiple managers or executives in the process. PerformYard also allows inputs on employee performance from people outside your organization, like clients, at no additional cost.</p>
+                        <p class="py-6 text-xl text-justify">Incorporate feedback from across the organization. Employee reviews can include self assessments, feedback from direct reports, and multiple managers or executives in the process. PerformYard also allows inputs on employee performance from people outside your organization, like clients, at no additional cost.</p>
                     </div>
                 </div>
             </div>
