@@ -60,7 +60,10 @@ const CustomerReview = () => {
  }
   </Swiper>
   
-<br />
+        <br />
+        <div className="flex justify-center">
+        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-48 w-full text-white font-bold'><a href="/addCustomerReview">Add your review</a></button>
+        </div>
         </div>
     );
 };
