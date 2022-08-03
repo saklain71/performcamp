@@ -19,6 +19,10 @@ import Home from './Pages/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import AddCustomerReview from './Pages/AddCustomerReview/AddCustomerReview';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import Deadline from './Pages/Dashboard/Deadline/Deadline';
+import Goal from './Pages/Dashboard/Goal/Goal';
+import Feedback from './Pages/Dashboard/Feedback/Feedback';
+import Tasks from './Pages/Dashboard/Tasks/Tasks';
 
 
 
@@ -43,8 +47,10 @@ function App() {
         <Route path='/addCustomerReview' element={<AddCustomerReview />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
         <Route path='*' element={<NotFound />}></Route>
-        
-        
+        <Route path='/deadline' element={<Deadline />}></Route>
+        <Route path='/goal' element={<Goal />}></Route>
+        <Route path='/feedback' element={<Feedback />}></Route>
+        <Route path='/tasks' element={<Tasks />}></Route>
       </Routes>
       
       <Footer></Footer>
