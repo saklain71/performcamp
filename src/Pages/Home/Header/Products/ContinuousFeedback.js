@@ -14,7 +14,7 @@ const ContinuousFeedback = () => {
                     <div class="lg:mx-10">
                         <h1 className='text-4xl font-semibold'>Continuous Feedback</h1>
                         <p class="text-xl whitespace-normal py-6">Effective performance management is more than a review; it’s a continuous dialogue designed to help employees succeed. PerformYard facilitates ongoing feedback to recognize achievement, document individual performance and track notes.</p>
-                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'>Get A Demo</button>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s">Get A Demo</a></button> 
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ const ContinuousFeedback = () => {
                 <div class="hero-content text-center lg:px-12">
                     <div class="lg:mx-10">
                         <p class="text-xl whitespace-normal lg:font-bold font-semibold py-6">Kickstart a dialog of feedback between your managers and employees.</p>                          
-                            <button className='hover:-translate-y-1 hover:scale-110 btn btn-error w-40 text-white font-bold'>Get A Demo</button>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s">Get A Demo</a></button> 
                     </div>
                 </div>
             </div>

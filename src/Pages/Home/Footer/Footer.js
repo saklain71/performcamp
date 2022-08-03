@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../../Image/Copy_of_perform-removebg-preview.png'
 
 const Footer = () => {
@@ -13,17 +14,20 @@ const Footer = () => {
             </div>
             <div>
                 <span class="footer-title text-xl">Services</span>
-                <a class="link link-hover">Branding</a>
+                <Link to="/overview" className='link link-hover'>Overview</Link>
+                <Link to="/reviewCheckin" className='link link-hover'>Review and Check in</Link>
+                <Link to="/goalManagement" className='link link-hover'>Goal Management</Link>
+                <Link to="/continuousFeedback" className='link link-hover'>Continuos Feedback</Link>
+                {/* <a class="link link-hover">Branding</a>
                 <a class="link link-hover">Design</a>
                 <a class="link link-hover">Marketing</a>
-                <a class="link link-hover">Advertisement</a>
+                <a class="link link-hover">Advertisement</a> */}
             </div>
             <div>
                 <span class="footer-title text-xl">Company</span>
                 <a class="link link-hover">About us</a>
                 <a class="link link-hover">Contact</a>
-                <a class="link link-hover">Jobs</a>
-                <a class="link link-hover">Press kit</a>
+                
             </div>
             <div>
                 <span class="footer-title text-xl">Legal</span>

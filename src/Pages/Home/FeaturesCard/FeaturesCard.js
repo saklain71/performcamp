@@ -11,19 +11,22 @@ const FeaturesCard = () => {
             _id: 1,
             role: 'Reviews & Checkins',
             description: 'PerformYard facilitates any review process, across any frequency and with a multitude of customizable inputs.',
-            img: happy
+            img: happy,
+            route: '/reviewCheckin'
         },
         {
             _id: 2,
             role: 'Goal Management',
             description: 'Goals and objectives are dynamic and incorporated into your process to align your organization.',
             img: goal,
+            route: '/goalManagement'
         },
         {
             _id: 3,
             role: 'Continuous Feedback',
             description: "Feedback let's you recognize achievement, document individual performance and keep track of important notes.",
-            img: feedback
+            img: feedback,
+            route: '/continuousFeedback'
         }
     ]
     return (

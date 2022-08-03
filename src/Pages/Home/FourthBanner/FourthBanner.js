@@ -7,7 +7,7 @@ const FourthBanner = () => {
       <div class="hero-content text-center lg:px-12">
         <div class="mx-10">
           <p class="text-xl whitespace-normal font-bold py-6">See how PerformCamp can streamline and automate your performance management process.</p>
-          <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'>Get A Demo</button>
+          <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s">Get A Demo</a></button> 
         </div>
       </div>
     </div>

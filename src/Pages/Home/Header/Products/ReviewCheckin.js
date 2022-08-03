@@ -14,7 +14,7 @@ const ReviewCheckin = () => {
                     <div class="lg:mx-10">
                         <h1 className='text-4xl font-semibold'>Performance Reviews & Check-Ins</h1>
                         <p class="text-xl whitespace-normal py-6">Run timely and efficient review cycles. PerformYard facilitates any review process, across any frequency and with customizable inputs. Access our best practice review questions, forms, and templates to drive success.</p>
-                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'>Get A Demo</button>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s">Get A Demo</a></button> 
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@ const ReviewCheckin = () => {
                 <div class="hero-content text-center lg:px-12">
                     <div class="lg:mx-10">
                         <p class="text-xl whitespace-normal lg:font-bold font-semibold py-6">See how PerformCamp can streamline your review or check-in process.</p>
-                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error w-40 text-white font-bold'>Get A Demo</button>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s">Get A Demo</a></button> 
                     </div>
                 </div>
             </div>
