@@ -18,13 +18,17 @@ import Overview from './Pages/Home/Header/Products/Overview';
 import Home from './Pages/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import AddCustomerReview from './Pages/AddCustomerReview/AddCustomerReview';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+
 
 
 function App() {
   return (
     <div>
-      <Navbar />
+      
+      <Navbar/>
       <Routes>
+      
         <Route exact path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/overview" element={<Overview />} />
@@ -37,8 +41,12 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/addCustomerReview' element={<AddCustomerReview />}></Route>
+        <Route path='/dashboard' element={<Dashboard />}></Route>
         <Route path='*' element={<NotFound />}></Route>
+        
+        
       </Routes>
+      
       <Footer></Footer>
       <ToastContainer />
     </div>
