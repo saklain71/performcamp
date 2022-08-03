@@ -8,8 +8,8 @@ const Footer = () => {
         <footer class="footer lg:p-20 p-10 bg-slate-700 text-white">
             <div>
                 <img src={logo} style={{ width: '300px' }} alt="" />
-                <p className='w-80 text-white'>PerformCamp is powerful and simple performance management software. For annual reviews, quarterly goals, continuous feedback and everything in between, we reduce the burden on HR and create a simple experience for your employees.</p>
-                <p>© { yearTxt } PerformCamp. All rights reserved.</p>
+                <p className='w-80 lg:ml-6 text-white'>PerformCamp is powerful and simple performance management software. For annual reviews, quarterly goals, continuous feedback and everything in between, we reduce the burden on HR and create a simple experience for your employees.</p>
+                <p className='lg:ml-6'>© { yearTxt } PerformCamp. All rights reserved.</p>
             </div>
             <div>
                 <span class="footer-title text-xl">Services</span>
