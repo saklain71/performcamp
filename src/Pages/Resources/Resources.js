@@ -34,20 +34,19 @@ const Resources = () => {
       <div className='text-center my-12'>
         <h2 className='text-xl font-bold'>Filter Articles By Topic</h2>
 
-        <div class="   overflow-x-auto my-4">
+        <div class="overflow-x-auto my-4">
           <button class="btn btn-active btn-error hover:bg-teal-600  mx-6">All</button>
           <button class="btn btn-error hover:bg-teal-600 mx-6">Performance Management</button>
           <button class="btn btn-error hover:bg-teal-600 mx-6">Employee Reviews</button>
           <button class="btn btn-error hover:bg-teal-600 mx-6">Continuous Feedback</button>
           <button class="btn btn-error hover:bg-teal-600 mx-6">Goal Management</button>
-
         </div>
 
       </div>
-      <div class="container container  m-auto flex flex-wrap flex-col md:flex-row items-center justify-start">
+      <div class="container  m-auto flex flex-wrap flex-col md:flex-row items-center justify-start">
 
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
+          <div class="flex flex-col lg:flex-row rounded  border  shadow-lg">
             <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_2} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">What Do Performance Management Systems Look Like in 2022?</h2>
