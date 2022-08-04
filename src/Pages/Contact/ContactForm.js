@@ -46,7 +46,7 @@ const ContactForm = () => {
     }))
   }
   return (
-    <div className="lg:mt-16 lg:mb-16 lg:mr-48 pt-6 pb-8 bg-rose-500 shadow-xl rounded p-5">
+    <div className="lg:mt-16 lg:mb-16 lg:mr-48 pt-6 pb-8 bg-teal-500 shadow-xl rounded p-5">
       {status && renderAlert()}
       <form onSubmit={handleSubmit}>
         <h3 className="text-white text-center mb-7 text-xl font-semibold">Send message</h3>
@@ -56,7 +56,7 @@ const ContactForm = () => {
         <TextareaField value={values.message} handleChange={handleChange} label="Your message here" name="message" />
         <div className="flex justify-center">
         <button type="submit"
-          className="mt-4 bg-gray-900 text-gray-200 rounded hover:bg-gray-700 px-4 py-2 focus:outline-none"
+          className="mt-4 bg-gray-900 text-gray-200 rounded-lg hover:bg-rose-500 px-4 py-2 focus:outline-none"
         >Send <ChevronRightIcon className="w-6 ml-2 float-right" />
         </button>
         </div>

@@ -35,7 +35,7 @@ const Resources = () => {
         <h2 className='text-xl font-bold'>Filter Articles By Topic</h2>
 
         <div class="overflow-x-auto my-4">
-          <button class="btn btn-active btn-error hover:bg-teal-600  mx-6">All</button>
+          {/* <button class="btn btn-error hover:bg-teal-600  mx-6">All</button> */}
           <button class="btn btn-error hover:bg-teal-600 mx-6">Performance Management</button>
           <button class="btn btn-error hover:bg-teal-600 mx-6">Employee Reviews</button>
           <button class="btn btn-error hover:bg-teal-600 mx-6">Continuous Feedback</button>
