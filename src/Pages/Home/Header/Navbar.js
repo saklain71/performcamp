@@ -33,6 +33,7 @@ const Navbar = () => {
                         </li>
                         <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
+                    <li className="text-blue-400 hover:-translate-y-1 hover:scale-90"><a href='/dashboard'>Dashboard</a></li>
                         <li><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s"><button className='btn btn-error text-white font-bold'>Get A Demo</button></a></li>
                     </ul>
                 </div>
@@ -55,6 +56,7 @@ const Navbar = () => {
                     </li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
+                    <li className="text-blue-400 hover:-translate-y-1 hover:scale-90"><a href='/dashboard'>Dashboard</a></li>
                     <li><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s"><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></a></li>
                 </ul>
             </div>

@@ -23,6 +23,7 @@ import Deadline from './Pages/Dashboard/Deadline/Deadline';
 import Goal from './Pages/Dashboard/Goal/Goal';
 import Feedback from './Pages/Dashboard/Feedback/Feedback';
 import Tasks from './Pages/Dashboard/Tasks/Tasks';
+import Contact from './Pages/Contact/Contact';
 
 
 
@@ -51,6 +52,7 @@ function App() {
         <Route path='/goal' element={<Goal />}></Route>
         <Route path='/feedback' element={<Feedback />}></Route>
         <Route path='/tasks' element={<Tasks />}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
       </Routes>
       
       <Footer></Footer>
