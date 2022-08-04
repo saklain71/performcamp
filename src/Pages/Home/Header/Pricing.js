@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import propImg from '../../../Image/prof.svg'
 import enterpImg from '../../../Image/entrp.svg'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import background_1 from '../../../Image/background_image/background_image_1.png'
+import { toast } from 'react-toastify';
 
 const Pricing = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset  } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+
+        fetch('http://localhost:5000/service', {
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                toast.success('Request sent to PerformCamp. Please, wait for the confirmation')
+                reset();
+            })
+        console.log(data)
+    };
 
     return (
         <div className='container lg:px-9 px-3'>
@@ -24,6 +40,19 @@ const Pricing = () => {
                             <div class="modal-box relative">
                                 <label for="pricing" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                 <form onSubmit={handleSubmit(onSubmit)}>
+
+
+                                    <div class="form-control w-full">
+                                        <label class="label">
+                                            <span class="label-text">Please, Pick Your Service First</span>
+
+                                        </label>
+                                        <select {...register("service", { required: "Organization name is required" })} class="select select-bordered border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-transparent">
+                                            <option>Professional</option>
+                                            <option>Enterprise</option>
+                                        </select>
+                                    </div>
+
                                     <div className='flex gap-5'>
                                         <div>
                                             <label class="label">
@@ -44,8 +73,8 @@ const Pricing = () => {
                                     <label class="label">
                                         <span class="label-text">Email</span>
                                     </label>
-                                    <input {...register("mail", { required: "Email Address is required" })} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-transparent" />
-                                    <p className='text-red-500'>{errors.mail?.message}</p>
+                                    <input {...register("email", { required: "Email Address is required" })} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-transparent" />
+                                    <p className='text-red-500'>{errors.email?.message}</p>
 
                                     <label class="label">
                                         <span class="label-text">Organization</span>
@@ -73,7 +102,7 @@ const Pricing = () => {
                         <h1 className='text-4xl ml-5 font-bold'>Professional</h1>
                     </div>
                     <div className='py-5 px-16 h-32 bg-gray-200'>
-                        <h1 className='text-4xl font-bold'>$4-8</h1>
+                        <h1 className='text-4xl font-bold'>$5</h1>
                         <p>Per employee per month</p>
                     </div>
                     <div className='my-12 px-8'>
@@ -95,8 +124,8 @@ const Pricing = () => {
                         <h1 className='text-4xl ml-5 font-bold'>Enterprise</h1>
                     </div>
                     <div className='py-5 px-16 h-32 bg-gray-200'>
-                        <h1 className='text-2xl font-bold'>Customized to your business needs:</h1>
-                        <Link to="/" class="btn btn-link font-bold text-blue-400 hover:no-underline text-xl p-0">Get a Price Quote <i class="fas fa-long-arrow-alt-right ml-2"></i></Link>
+                        <h1 className='text-4xl font-bold'>$8</h1>
+                        <p>Per employee per month</p>
                     </div>
                     <div className='mt-12 px-8'>
                         <ul>
@@ -109,6 +138,7 @@ const Pricing = () => {
                             <li className='mb-7'><i class="fas fa-check-circle mr-3"></i>Custom Service Level Agreement</li>
                             <li className='mb-7'><i class="fas fa-check-circle mr-3"></i>Additional document storage</li>
                         </ul>
+
                     </div>
                 </div>
             </div>
