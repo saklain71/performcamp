@@ -13,7 +13,7 @@ const GoalManagement = () => {
                     <div class="lg:mx-10">
                         <h1 className='text-4xl font-semibold'>Goal Management</h1>
                         <p class="text-xl whitespace-normal py-6">Goals and objectives should be dynamic and update as business priorities change. In PerformYard, you will gain insight into goal progress, breaking them down into manageable parts that can be achieved and communicated to others.</p>
-                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'>Get A Demo</button>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s">Get A Demo</a></button> 
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@ const GoalManagement = () => {
                 <div class="hero-content text-center lg:px-12">
                     <div class="lg:mx-10">
                         <p class="text-xl whitespace-normal lg:font-bold font-semibold py-6">See how easy it is to manage your organization's goals in PerformCamp.</p>
-                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error w-40 text-white font-bold'>Get A Demo</button>
+                        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-36 w-full text-white font-bold'><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s">Get A Demo</a></button> 
                     </div>
                 </div>
             </div>
