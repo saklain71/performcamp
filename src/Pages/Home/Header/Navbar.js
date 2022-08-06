@@ -18,7 +18,7 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Customers</a></li>
+                        <li><a href='/customers'>Customers</a></li>
                         <li tabindex="0">
                             <a class="justify-between">
                                 Product
@@ -33,6 +33,7 @@ const Navbar = () => {
                         </li>
                         <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
+                    <li className="text-blue-400 hover:-translate-y-1 hover:scale-90"><a href='/dashboard'>Dashboard</a></li>
                         <li><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s"><button className='btn btn-error text-white font-bold'>Get A Demo</button></a></li>
                     </ul>
                 </div>
@@ -40,7 +41,7 @@ const Navbar = () => {
             </div>
             <div class="navbar-center font-bold hidden lg:flex">
                 <ul class="menu menu-horizontal  p-0">
-                    <li className='hover:-translate-y-1 hover:scale-90'><a>Customers</a></li>
+                    <li className='hover:-translate-y-1 hover:scale-90'><a href='/customers'>Customers</a></li>
                     <li className='hover:-translate-y-1 hover:scale-90' tabindex="0">
                         <a>
                             Product
@@ -55,6 +56,7 @@ const Navbar = () => {
                     </li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
+                    <li className="text-blue-400 hover:-translate-y-1 hover:scale-90"><a href='/dashboard'>Dashboard</a></li>
                     <li><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s"><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></a></li>
                 </ul>
             </div>
