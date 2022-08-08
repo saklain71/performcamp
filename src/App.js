@@ -26,6 +26,7 @@ import Tasks from './Pages/Dashboard/Tasks/Tasks';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Customers from './Pages/Customers/Customers';
+import RequireAuth from './Pages/Shared/RequireAuth';
 
 
 
@@ -45,10 +46,10 @@ function App() {
         
         <Route path="/pricing" element={<Pricing />} />
         <Route path='/resources' element={<Resources />}></Route>
-        <Route path='/login' element={<Login />}></Route>
+        <Route path='/login' element={ <Login />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/addCustomerReview' element={<AddCustomerReview />}></Route>
-        <Route path='/dashboard' element={<Dashboard />}></Route>
+        <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}></Route>
         <Route path='*' element={<NotFound />}></Route>
         <Route path='/deadline' element={<Deadline />}></Route>
         <Route path='/goal' element={<Goal />}></Route>

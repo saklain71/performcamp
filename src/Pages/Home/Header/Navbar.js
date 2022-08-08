@@ -10,6 +10,7 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOut(auth);
     }
+    console.log(user);
     return (
         <div class="navbar sticky z-10 top-0 bg-base-100">
             <div class="navbar-start">
@@ -32,8 +33,8 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
-                    <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
-                    <li className="text-blue-400 hover:-translate-y-1 hover:scale-90"><a href='/dashboard'>Dashboard</a></li>
+                        <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
+
                         <li><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s"><button className='btn btn-error text-white font-bold'>Get A Demo</button></a></li>
                     </ul>
                 </div>
@@ -56,7 +57,7 @@ const Navbar = () => {
                     </li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
-                    <li className="text-blue-400 hover:-translate-y-1 hover:scale-90"><a href='/dashboard'>Dashboard</a></li>
+
                     <li><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s"><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></a></li>
                 </ul>
             </div>
@@ -65,8 +66,11 @@ const Navbar = () => {
                     user
                         ?
                         <div>
-
-                            <button onClick={handleSignOut} className="btn btn-outline rounded-full lg:px-7 font-bold"> Sign Out</button>
+                            <div className='flex align-middle'>
+                                <span className='text-blue-500 text-md'>{user?.displayName}</span>
+                                <img className='w-10 rounded-full mx-3' src={user.photoURL} alt=""/>
+                             
+                            </div>
                         </div>
 
                         :
