@@ -2,16 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../Image/Copy_of_perform-removebg-preview.png';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
     const handleSignOut = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     }
-    console.log(user);
-    return (
+    function classNames(...classes) {
+        return classes.filter(Boolean).join(' ')
+      }
+
+       return (
         <div class="navbar sticky z-10 top-0 bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -62,21 +72,71 @@ const Navbar = () => {
                 </ul>
             </div>
             <div class="navbar-end">
-                {
-                    user
-                        ?
-                        <div>
-                            <div className='flex align-middle'>
-                                <span className='text-blue-500 text-md'>{user?.displayName}</span>
-                                <img className='w-10 rounded-full mx-3' src={user.photoURL} alt=""/>
-                                <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Sign Out</button></Link>
-                             
-                            </div>
-                        </div>
 
-                        :
-                        <Link to="/login"><button  className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link>
-                }
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                
+                {/* Profile dropdown */}
+              {
+                  user  ?<div>
+                        <Menu as="div" className="ml-3 z-30 relative">
+                  <div className="flex justify-center items-center gap-3">
+                  <span className="text-rose-400 font-bold lg:block hidden">{user.displayName}</span>
+                  
+                  {
+                       user.photoURL? <img
+                       className="h-8 w-8 rounded-full "
+                       src={user.photoURL}
+                       alt=""
+                     /> :<img src="https://png.pngtree.com/png-vector/20190225/ourlarge/pngtree-vector-avatar-icon-png-image_702436.jpg" alt="" className="h-8 w-8 rounded-full" />
+                     }
+                    <Menu.Button className=" flex text-sm rounded-full focus:outline-none hover:transition-all">
+                    
+                      <span className="sr-only">Open user menu</span>
+                      
+                      <FontAwesomeIcon icon={faEllipsisVertical} className="h-6 hover:animate-spin w-5 text-rose-400 font-bold group-hover:text-rose-600" aria-hidden="true" />
+                     
+                    </Menu.Button>
+                    
+                    
+                  </div>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg overflow-hidden text-center bg-rose-400 text-white ring-1 ring-black ring-opacity-5 cursor-pointer focus:outline-none">
+                    <Menu.Item>
+                        {({ active }) => (
+                          <Link to="/dashboard"   className={classNames(active ? 'bg-teal-500' : '', 'block px-4 py-2 text-sm ')}
+                          >
+                            Dashboard
+                          </Link>
+                        )}
+                      </Menu.Item>
+        
+                          <button onClick={handleSignOut} className='border-t-2 hover:text-gray-100 w-full font-bold hover:bg-teal-500 px-4 py-2 text-sm '
+                          >
+                            Log out <FontAwesomeIcon icon={faRightFromBracket} className="h-4 hover:translate-x-2 w-5 text-white  group-hover:text-rose-600" aria-hidden="true" />
+                          </button>
+                        
+                    
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+                  </div> :
+                  <div>
+                      <Link to="/login">
+                      <button  className='btn btn-outline rounded-full lg:px-7 font-bold'
+                        >Login</button>
+                      </Link>
+                  </div>
+              }
+              </div>
+
 
             </div>
 
