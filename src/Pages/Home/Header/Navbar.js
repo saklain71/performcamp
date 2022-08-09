@@ -69,12 +69,13 @@ const Navbar = () => {
                             <div className='flex align-middle'>
                                 <span className='text-blue-500 text-md'>{user?.displayName}</span>
                                 <img className='w-10 rounded-full mx-3' src={user.photoURL} alt=""/>
+                                <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Sign Out</button></Link>
                              
                             </div>
                         </div>
 
                         :
-                        <Link to="/login"><button onClick={handleSignOut} className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link>
+                        <Link to="/login"><button  className='btn btn-outline rounded-full lg:px-7 font-bold'>Log in</button></Link>
                 }
 
             </div>
