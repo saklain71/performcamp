@@ -17,7 +17,7 @@ const AddCustomerReview = () => {
     const onSubmit = data => {
         reset()
         data.rating=rating
-        data.pic={photo}
+        data.pic="https://i.ibb.co/m5VNSFc/Round-logo-2.png"
           fetch("http://localhost:5000/customerReviews",{
 method:"POST",
 headers:{
@@ -37,7 +37,7 @@ body:JSON.stringify(data)
 
     return (
       <div className=''>
-          <h2 className="py-4 text-3xl text-center text-red-500">| Share your experience with us</h2>
+          <h2 className="py-4 text-3xl font-bold text-center text-red-500">| Share your experience with us</h2>
           <form className=" lg:p-20 p-10 flex flex-col  space-y-4 justify-center" onSubmit={handleSubmit(onSubmit)}>
           
         <input className="border-2 p-2   border-blue-900 rounded-md"  placeholder="Company Name" {...register("name", { required: true, maxLength: 100 })} />

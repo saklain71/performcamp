@@ -25,8 +25,8 @@ const Footer = () => {
             </div>
             <div>
                 <span class="footer-title text-xl">Company</span>
-                <a class="link link-hover">About us</a>
-                <a class="link link-hover">Contact</a>
+                <a href='/about' class="link link-hover">About us</a>
+                <a href='/contact' class="link link-hover">Contact</a>
                 
             </div>
             <div>
