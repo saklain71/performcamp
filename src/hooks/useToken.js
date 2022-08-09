@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 const useToken = user => {
     const [token, setToken] = useState('');
 
-console.log('token', user);
     useEffect(() => {
         // console.log("inside token", user);
         const name = user?.user?.displayName ;
@@ -26,7 +25,6 @@ console.log('token', user);
                 .then(data => {
                     // console.log('data inside useToken', data);
                     const accessToken = data.token;
-                    console.log("token", accessToken);
                     localStorage.setItem('accessToken', accessToken)
                     setToken(accessToken);
                 })

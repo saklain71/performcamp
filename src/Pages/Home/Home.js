@@ -13,8 +13,7 @@ import SetGoals from './SetGoals/SetGoals';
 import ThirdBanner from './ThirdBanner/ThirdBanner';
 
 const Home = () => {
-    const [user] = useAuthState(auth);
-    console.log("for home", user);
+   
     return (
         <div>
             
