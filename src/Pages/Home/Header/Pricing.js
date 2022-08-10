@@ -11,7 +11,7 @@ const Pricing = () => {
 
     const onSubmit = (data) => {
 
-        fetch('http://localhost:5000/service', {
+        fetch(`https://perform-camp-server.vercel.app/service`, {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
