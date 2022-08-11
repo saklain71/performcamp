@@ -52,7 +52,7 @@ const AddTask = () => {
                         </div>
                         <div class="mx-auto pt-4">
                             <div class="container mx-auto">
-                                <form class="my-6 w-11/12 mx-auto xl:w-full xl:mx-0">
+                                
                                     
                                     <div class="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                                         <label for="Email" class="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">Email</label>
@@ -90,8 +90,7 @@ const AddTask = () => {
                                         <label for="floatingInput" class="text-gray-700">Select a deadline</label>
                                     </div>
                                     </div>
-                                   
-                                </form>
+               
                             </div>
                         </div>
                     </div>
