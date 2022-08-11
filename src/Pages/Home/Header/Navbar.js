@@ -15,13 +15,13 @@ const Navbar = () => {
     const [user] = useAuthState(auth);
     const handleSignOut = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     }
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
       }
 
-    console.log(user);
-    return (
+       return (
         <div class="navbar sticky z-10 top-0 bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -72,6 +72,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div class="navbar-end">
+
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
                 {/* Profile dropdown */}
@@ -129,12 +130,13 @@ const Navbar = () => {
                   </div> :
                   <div>
                       <Link to="/login">
-                      <button  className='bg-gray-900  text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                      <button  className='btn btn-outline rounded-full lg:px-7 font-bold'
                         >Login</button>
                       </Link>
                   </div>
               }
               </div>
+
 
             </div>
 

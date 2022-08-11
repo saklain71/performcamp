@@ -1,4 +1,8 @@
 import React from 'react';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 import CustomerReview from '../CustomerReview/CustomerReview'
 import Companies from './Companies/Companies';
 import FeaturesCard from './FeaturesCard/FeaturesCard';
@@ -11,6 +15,7 @@ import SetGoals from './SetGoals/SetGoals';
 import ThirdBanner from './ThirdBanner/ThirdBanner';
 
 const Home = () => {
+   
     return (
         <div>
             
@@ -19,8 +24,9 @@ const Home = () => {
             <SecondBanner></SecondBanner>
             <ThirdBanner></ThirdBanner>
             <SetGoals></SetGoals>
-            <FeaturesCard></FeaturesCard>
             
+            <FeaturesCard></FeaturesCard>
+         
             <HappyClient></HappyClient>
             <CustomerReview></CustomerReview>
             <FourthBanner></FourthBanner>

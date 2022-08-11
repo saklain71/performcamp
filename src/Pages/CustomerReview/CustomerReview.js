@@ -20,6 +20,7 @@ import SwiperCore, {
 } from 'swiper';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 // install Swiper modules
 SwiperCore.use([Autoplay,Parallax]);
 
@@ -28,7 +29,7 @@ const CustomerReview = () => {
     const quoteLeft=<FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
    const [displayReviews,setDisplayReviews]=useState([])
    useEffect(()=>{
-       fetch('http://localhost:5000/customerReviews')
+       fetch(`https://perform-camp-server.vercel.app/customerReviews`)
        .then(res=>res.json())
        .then(data=>setDisplayReviews(data))
    },[])
@@ -47,7 +48,7 @@ const CustomerReview = () => {
      displayReviews.map(review=><SwiperSlide key={review.id}>
     <div className="relative text-center bg-amber-100 shadow-xl justify-center space-y-4 rounded-md bg-gray-900 p-10 text-white "> <span className="absolute left-3/4 top-16  text-3xl text-gray-600">{quoteRight}</span>
     <span className="absolute left-10 top-3/4 text-3xl text-gray-600">{quoteLeft}</span>
-   <div className="flex justify-center "> <div className="w-24 border-2 border-red-500 h-24 rounded-full   overflow-hidden"> <img src={review.pic} alt="" /></div></div>
+   <div className="flex justify-center "> <div className="w-24 border-2 border-red-500 h-24 rounded-full   overflow-hidden"> <img src={review.image} alt="" /></div></div>
       <h2 className='text-4xl text-black'>{review.name}</h2>
       <p className='p-5 text-rose-600'>{review.description}</p>
       <div className="flex justify-center">
@@ -62,7 +63,8 @@ const CustomerReview = () => {
   
         <br />
         <div className="flex justify-center">
-        <button className='hover:-translate-y-1 hover:scale-110 btn btn-error lg:w-48 w-full text-white font-bold'><a href="/addCustomerReview">Add your review</a></button>
+        <Link to="/addCustomerReview">
+        <button className=' btn btn-error lg:w-48 w-full text-white font-bold'>Add your review</button></Link>
         </div>
         </div>
     );
