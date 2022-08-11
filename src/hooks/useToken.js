@@ -7,7 +7,7 @@ const useToken = user => {
 
     useEffect(() => {
         // console.log("inside token", user);
-        const name = user?.user?.displayName ;
+        const name = user?.user?.displayName;
         const email = user?.user?.email;
         const image = user?.user?.photoURL;
         const currentUser = {
@@ -16,7 +16,10 @@ const useToken = user => {
             image: image
         };
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+
+
+            fetch(`https://intense-citadel-07221.herokuapp.com/user/${email}`, {
+
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
