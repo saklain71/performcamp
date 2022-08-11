@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './Pages/Home/Header/Navbar';
 import Footer from './Pages/Home/Footer/Footer';
-import { Link, Route, Router, Routes } from "react-router-dom";
+import {Route, Routes } from "react-router-dom";
 
 import ReviewCheckin from './Pages/Home/Header/Products/ReviewCheckin';
 import GoalManagement from './Pages/Home/Header/Products/GoalManagement';
@@ -22,39 +22,50 @@ import ChatwootWidget from './Pages/Chatwoot/Chatwoot'
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Customers from './Pages/Customers/Customers';
-import RequireAuth from './Pages/Shared/RequireAuth';
-
-
+//import RequireAuth from './Pages/Shared/RequireAuth';
+import Dashbord from './Pages/Dashbord/Dashbord';
+import LeaderBoard from './Pages/Dashbord/LeaderBoard';
+import Goal from './Pages/Dashbord/Goal';
+import Review from './Pages/Dashbord/Review';
+import Feedback from './Pages/Dashbord/Feedback';
+import Deadline from './Pages/Dashbord/Deadline';
+import UserProfile from './Pages/Dashbord/UserProfile';
 
 
 function App() {
   return (
     <div>
-      
-      <Navbar/>
-      
-        
-      
+
+      <Navbar />
       <Routes>
-      
         <Route exact path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/overview" element={<Overview />} />
         <Route path="/reviewCheckin" element={<ReviewCheckin />} />
         <Route path="/goalManagement" element={<GoalManagement />} />
         <Route path="/continuousFeedback" element={<ContinuousFeedback />} />
-        
         <Route path="/pricing" element={<Pricing />} />
         <Route path='/resources' element={<Resources />}></Route>
-        <Route path='/login' element={ <Login />}></Route>
+        <Route path='/login' element={<Login />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/addCustomerReview' element={<AddCustomerReview />}></Route>
         <Route path='*' element={<NotFound />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/customers' element={<Customers />}></Route>
+       
+        <Route path="/dashboard" element={<Dashbord></Dashbord>}>
+
+          <Route index element={<UserProfile></UserProfile>}></Route>
+          <Route path="leaderboard" element={<LeaderBoard></LeaderBoard>}></Route>
+          <Route path="goal" element={<Goal></Goal>}></Route>
+          <Route path="review" element={<Review></Review>}></Route>
+          <Route path="feedback" element={<Feedback></Feedback>}></Route>
+          <Route path="deadline" element={<Deadline></Deadline>}></Route>
+        </Route>
+
       </Routes>
-      <ChatwootWidget/>
+      <ChatwootWidget />
       <Footer></Footer>
       <ToastContainer />
     </div>
