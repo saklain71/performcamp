@@ -14,7 +14,7 @@ const useToken = user => {
             image: image
         };
         if (email) {
-            fetch(`https://perform-camp-server.vercel.app/user/${email}`, {
+            fetch(`https://intense-citadel-07221.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

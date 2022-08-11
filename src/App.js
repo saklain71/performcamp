@@ -30,6 +30,7 @@ import Review from './Pages/Dashbord/Review';
 import Feedback from './Pages/Dashbord/Feedback';
 import Deadline from './Pages/Dashbord/Deadline';
 import UserProfile from './Pages/Dashbord/UserProfile';
+import Tasks from './Pages/Dashbord/Task/Tasks';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <Route index element={<UserProfile></UserProfile>}></Route>
           <Route path="leaderboard" element={<LeaderBoard></LeaderBoard>}></Route>
           <Route path="goal" element={<Goal></Goal>}></Route>
+          <Route path="task" element={<Tasks/>}></Route>
           <Route path="review" element={<Review></Review>}></Route>
           <Route path="feedback" element={<Feedback></Feedback>}></Route>
           <Route path="deadline" element={<Deadline></Deadline>}></Route>
