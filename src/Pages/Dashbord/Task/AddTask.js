@@ -90,8 +90,14 @@ const AddTask = () => {
 
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="mx-auto pt-4">
+                            <div class="container mx-auto">
+                                
                             <div class="mx-auto pt-4">
                                 <div class="container mx-auto">
+
                                     
 
                                         <div class="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
@@ -131,10 +137,13 @@ const AddTask = () => {
                                             </div>
                                         </div>
 
-                               
-                                </div>
+                                    </div>
+                                    
+               
                             </div>
                         </div>
+                    </div>
+                    
                         <div class="container mx-auto mt-10 rounded bg-gray-100 dark:bg-gray-700 w-11/12 xl:w-full">
                             <div class="xl:w-full py-5 px-8">
                                 <div class="flex items-center mx-auto">
@@ -182,6 +191,7 @@ const AddTask = () => {
                             </div>
                         </div>
                     </div>
+                    
                 </form>
 
 
