@@ -21,7 +21,7 @@ const AddCustomerReview = () => {
         reset()
         data.rating=rating
         data.image=user.photoURL
-          fetch(`https://perform-camp-server.vercel.app/customerReviews`,{
+          fetch(`https://intense-citadel-07221.herokuapp.com/customerReviews`,{
 method:"POST",
 headers:{
     "content-type":"application/json"

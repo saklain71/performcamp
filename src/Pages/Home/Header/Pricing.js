@@ -11,7 +11,7 @@ const Pricing = () => {
 
     const onSubmit = (data) => {
 
-        fetch(`https://perform-camp-server.vercel.app/service`, {
+        fetch(`https://intense-citadel-07221.herokuapp.com/service`, {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
