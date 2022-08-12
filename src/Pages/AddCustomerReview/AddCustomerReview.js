@@ -21,7 +21,7 @@ const AddCustomerReview = () => {
         reset()
         data.rating=rating
         data.image=user.photoURL
-          fetch(`https://perform-camp-server.vercel.app/customerReviews`,{
+          fetch(`http://localhost:5000/customerReviews`,{
 method:"POST",
 headers:{
     "content-type":"application/json"

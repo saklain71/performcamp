@@ -29,7 +29,7 @@ const CustomerReview = () => {
     const quoteLeft=<FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
    const [displayReviews,setDisplayReviews]=useState([])
    useEffect(()=>{
-       fetch(`https://perform-camp-server.vercel.app/customerReviews`)
+       fetch(`http://localhost:5000/customerReviews`)
        .then(res=>res.json())
        .then(data=>setDisplayReviews(data))
    },[])

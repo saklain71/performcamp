@@ -14,7 +14,7 @@ const useToken = user => {
             image: image
         };
         if (email) {
-            fetch(`https://perform-camp-server.vercel.app/user/${email}`, {
+            fetch(`http://localhost:5000/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -23,7 +23,7 @@ const useToken = user => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    // console.log('data inside useToken', data);
+                    //console.log('data inside useToken', data);
                     const accessToken = data.token;
                     localStorage.setItem('accessToken', accessToken)
                     setToken(accessToken);

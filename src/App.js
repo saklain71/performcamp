@@ -7,7 +7,7 @@ import ReviewCheckin from './Pages/Home/Header/Products/ReviewCheckin';
 import GoalManagement from './Pages/Home/Header/Products/GoalManagement';
 import ContinuousFeedback from './Pages/Home/Header/Products/ContinuousFeedback';
 
-import Pricing from './Pages/Home/Header/Pricing';
+import Pricing from './Pages/Pricing/Pricing';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -30,6 +30,8 @@ import Review from './Pages/Dashbord/Review';
 import Feedback from './Pages/Dashbord/Feedback';
 import Deadline from './Pages/Dashbord/Deadline';
 import UserProfile from './Pages/Dashbord/UserProfile';
+import MakePayment from './Pages/Pricing/MakePayment/MakePayment';
+import ConfirmPayment from './Pages/Pricing/ConfirmPayment/ConfirmPayment';
 
 
 function App() {
@@ -37,7 +39,6 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        {/* >>>>>>> ef573200c442e373ff3177726b7d87905944b9c1 */}
         <Route exact path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/overview" element={<Overview />} />
@@ -45,6 +46,8 @@ function App() {
         <Route path="/goalManagement" element={<GoalManagement />} />
         <Route path="/continuousFeedback" element={<ContinuousFeedback />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/makePayment" element={<MakePayment />} />
+        <Route path="/confirmPayment/:id" element={<ConfirmPayment />} />
         <Route path='/resources' element={<Resources />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
