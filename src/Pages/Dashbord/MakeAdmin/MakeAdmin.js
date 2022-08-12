@@ -1,43 +1,44 @@
-import React,{useState,useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MakeAdmin = () => {
-  const [userData,setUserData]=useState([])
-//   const [singleUserData,setSingleUserData]=useState({})
- const roleChangeRef=useRef()
-  useEffect(()=>{
-fetch('http://localhost:5000/user')
-.then(res=>res.json())
-.then(data=>setUserData(data))
-  },[userData])
-  const handleEdit=(id)=>{
-        const roleChange=roleChangeRef.current.value
-        const role={role:roleChange}
-    fetch(`http://localhost:5000/user_admin/${id}`,{
-        method:"PUT",
-        headers:{
-            "content-type":"application/json"
-        },
-        body:JSON.stringify(role)
+  const [userData, setUserData] = useState([]);
+
+  const roleChangeRef = useRef()
+  useEffect(() => {
+    fetch('http://localhost:5000/user')
+      .then(res => res.json())
+      .then(data => setUserData(data))
+  }, [userData])
+
+  const handleEdit = (email) => {
+    const roleChange = roleChangeRef.current.value
+    const role = { role: roleChange }
+    fetch(`http://localhost:5000/user_admin/${email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(role)
     })
-    .then(res=>res.json())
-    .then(data=>{
-        
-        if(data.modifiedCount>0){
-            // setStatus("Approved")
-            toast("Order Has been Update Successfully!")
-            // history.push("/manage-orders")
-}
-    })
+      .then(res => res.json())
+      .then(data => {
+
+        if (data.modifiedCount > 0) {
+     
+          toast("Role Has been Update Successfully!")
+    
+        }
+      })
 
   }
 
-    return (
-        <div>
-                                 <ToastContainer/>
+  return (
+    <div>
+      <ToastContainer />
 
-        <div className="flex flex-col">
+      <div className="flex flex-col">
         <div className=" overflow-x-auto ">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -96,17 +97,18 @@ fetch('http://localhost:5000/user')
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.role}</td>
                       <td className="px-6 flex gap-4 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <select ref={roleChangeRef} name="" id="">
-                              <option value="Admin">Admin</option>
-                              <option value="Moderator">Manager</option>
-                              <option value="Member">Employee</option>
-                          </select>
-                       <button className="bg-pink-600 p-1 text-white rounded-sm" onClick={()=>handleEdit(person._id)}>
+                        <select ref={roleChangeRef} name="" id="sOption">
+                          <option value="Admin">Admin</option>
+                          <option value="Manager">Manager</option>
+                          <option value="Employee">Employee</option>
+                        </select>
+                       
+                        <button className=" btn btn-outline btn-error rounded-2xl" onClick={() => handleEdit(person.email)}>
                           Change
-                       </button>
+                        </button>
 
-                       {/* modal for edit  */}
-                  
+                        {/* modal for edit  */}
+
                       </td>
                     </tr>
                   ))}
@@ -116,9 +118,9 @@ fetch('http://localhost:5000/user')
           </div>
         </div>
       </div>
-      </div>
-  
-    );
+    </div>
+
+  );
 };
 
 export default MakeAdmin;
