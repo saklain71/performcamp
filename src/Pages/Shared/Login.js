@@ -55,7 +55,7 @@ const Login = () => {
     };
 
     return (
-        <div className='flex h-screen items-center justify-center bg-base-100'>
+        <div className='flex h-screen items-center justify-center bg-base-100 overflow-visible'>
             <div className="card w-11/12 lg:w-1/4 shadow-xl
             ">
                 <div className="card-body bg-gradient-to-r from-yellow-100 to-fuchsia-200">

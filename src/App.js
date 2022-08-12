@@ -30,8 +30,14 @@ import Review from './Pages/Dashbord/Review';
 import Feedback from './Pages/Dashbord/Feedback';
 import Deadline from './Pages/Dashbord/Deadline';
 import UserProfile from './Pages/Dashbord/UserProfile';
+
 import MakePayment from './Pages/Pricing/MakePayment/MakePayment';
 import ConfirmPayment from './Pages/Pricing/ConfirmPayment/ConfirmPayment';
+
+import Tasks from './Pages/Dashbord/Task/Tasks';
+import MakeAdmin from './Pages/Dashbord/MakeAdmin/MakeAdmin';
+import AddTask from './Pages/Dashbord/Task/AddTask';
+
 
 
 function App() {
@@ -61,6 +67,9 @@ function App() {
           <Route index element={<UserProfile></UserProfile>}></Route>
           <Route path="leaderboard" element={<LeaderBoard></LeaderBoard>}></Route>
           <Route path="goal" element={<Goal></Goal>}></Route>
+          <Route path="task" element={<Tasks/>}></Route>
+          <Route path="addtask" element={<AddTask/>}></Route>
+          <Route path="makeAdmin" element={<MakeAdmin/>}></Route>
           <Route path="review" element={<Review></Review>}></Route>
           <Route path="feedback" element={<Feedback></Feedback>}></Route>
           <Route path="deadline" element={<Deadline></Deadline>}></Route>
