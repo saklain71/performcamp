@@ -23,6 +23,8 @@ const Tasks = () => {
             .then((data) => setTasks(data));
     }, [isReload]);
 
+    
+
     return (
         <div>
         <div className='mid-content  task-background border lg:m-12 text-black shadow-2xl rounded-lg'>
