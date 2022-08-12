@@ -29,9 +29,13 @@ const CustomerReview = () => {
     const quoteLeft=<FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
    const [displayReviews,setDisplayReviews]=useState([])
    useEffect(()=>{
+<<<<<<< HEAD
+       fetch(`http://localhost:5000/customerReviews`)
+=======
 
        fetch(`https://intense-citadel-07221.herokuapp.com/customerReviews`)
 
+>>>>>>> cd32093fecd4c2cfce7b576359ad9f5899570dbc
        .then(res=>res.json())
        .then(data=>setDisplayReviews(data))
    },[])
