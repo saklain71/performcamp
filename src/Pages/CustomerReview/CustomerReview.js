@@ -30,7 +30,7 @@ const CustomerReview = () => {
    const [displayReviews,setDisplayReviews]=useState([])
    useEffect(()=>{
 
-       fetch(`https://intense-citadel-07221.herokuapp.com/customerReviews`)
+       fetch(`http://localhost:5000/customerReviews`)
 
        .then(res=>res.json())
        .then(data=>setDisplayReviews(data))

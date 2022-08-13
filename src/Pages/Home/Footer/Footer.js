@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../Image/Copy_of_perform-removebg-preview.png'
+import logo from '../../../Image/logo/PerformCamp-logo.png'
 
 const Footer = () => {
     const currentYear = (new Date().getFullYear())
