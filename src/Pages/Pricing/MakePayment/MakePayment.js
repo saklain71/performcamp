@@ -42,7 +42,7 @@ const MakePayment = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount) {
-                        toast.success(`Canceled Your Order`)
+                        toast.success(`Canceled Your Bookings`)
                     }
                     const remaining = bookings.filter(booking => booking._id !== id);
                     setBookings(remaining);
@@ -52,10 +52,10 @@ const MakePayment = () => {
     return (
         <div >
             <h2 className="text-center mt-10 text-3xl font-semibold">Payment Confirmation</h2>
-            <div className='py-52 flex lg:flex-row flex-col justify-center items-center gap-7'>
+            <div className='py-52 grid lg:grid-cols-3 md:grid-cols-2 items-center gap-10'>
                 {
                     bookings.map((booking) =>
-                        <div class="card w-96 bg-base-100 shadow-xl">
+                        <div class="card w-full bg-base-100 shadow-xl">
                             <div class="card-body">
                                 <h2 class="card-title">Service Type</h2>
                                 <h3>{booking?.service}</h3>

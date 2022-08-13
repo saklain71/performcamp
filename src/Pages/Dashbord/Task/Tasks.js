@@ -12,7 +12,7 @@ const Tasks = () => {
             .then((data) => setTasks(data));
     }, [isReload]);
 
-    
+
 
     return (
         <div>
@@ -26,10 +26,7 @@ const Tasks = () => {
                                 <p className='text-xl'><span className='font-bold'>Description: </span><span>{task?.description}</span></p>
                                 <p className='text-md'><span className='font-bold'>Assigned to: </span>{task?.email}</p>
                             </div>
-
                         </div>
-
-
                     </div>
                 ))}
             </div>
