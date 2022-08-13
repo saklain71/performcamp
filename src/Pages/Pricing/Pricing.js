@@ -14,7 +14,7 @@ const Pricing = () => {
 
     const onSubmit = (data) => {
 
-        fetch(`https://intense-citadel-07221.herokuapp.com/service`, {
+        fetch(`http://localhost:5000/bookings`, {
 
             method: 'POST',
             headers: {

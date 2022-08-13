@@ -12,19 +12,6 @@ const AddCustomerReview = () => {
   const { register, handleSubmit, reset } = useForm();
   const [user] = useAuthState(auth)
 
-<<<<<<< HEAD
-    const onSubmit = data => {
-        reset()
-        data.rating=rating
-        data.image=user.photoURL
-          fetch(`http://localhost:5000/customerReviews`,{
-method:"POST",
-headers:{
-    "content-type":"application/json"
-},
-body:JSON.stringify(data)
-=======
->>>>>>> cd32093fecd4c2cfce7b576359ad9f5899570dbc
 
   const [rating, setRating] = useState(0)
   const handleRating = (rate) => {
@@ -36,7 +23,7 @@ body:JSON.stringify(data)
     reset()
     data.rating = rating
     data.image = user.photoURL
-    fetch(`https://intense-citadel-07221.herokuapp.com/customerReviews`, {
+    fetch(`http://localhost:5000/customerReviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json"
