@@ -24,7 +24,6 @@ const AddTask = () => {
 
         }
 
-        event.target.value = "";
         fetch('http://localhost:5000/task', {
             method: 'POST',
             headers: {
