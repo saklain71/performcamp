@@ -13,24 +13,31 @@ const MakeAdmin = () => {
   }, [userData])
 
   const handleEdit = (email) => {
-    const roleChange = roleChangeRef.current.value
-    const role = { role: roleChange }
+    //   // const roleChange = roleChangeRef.current.value;
+    //   const selectElement = document.querySelector('#select1');
+    //  const output = selectElement.options[selectElement.selectedIndex].value;
+    //   // document.querySelector('.output').textContent = output;
+    //   console.log(output);
+
     fetch(`http://localhost:5000/user_admin/${email}`, {
       method: "PUT",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
       },
-      body: JSON.stringify(role)
+
     })
       .then(res => res.json())
       .then(data => {
 
         if (data.modifiedCount > 0) {
-     
+
           toast("Role Has been Update Successfully!")
-    
+
         }
       })
+
+
 
   }
 
@@ -80,7 +87,7 @@ const MakeAdmin = () => {
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="flex-shrink-0 h-10 w-10">
-                            <img className="h-10 w-10 rounded-full" src={person.image} alt="" />
+                            <img referrerPolicy="no-referrer" className="h-10 w-10 rounded-full" src={person.image} alt="" />
                           </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900">{person.name}</div>
@@ -97,14 +104,15 @@ const MakeAdmin = () => {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.role}</td>
                       <td className="px-6 flex gap-4 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <select ref={roleChangeRef} name="" id="sOption">
+                        {/* <select ref={roleChangeRef}  name="roleOption" id="select1">
                           <option value="Admin">Admin</option>
                           <option value="Manager">Manager</option>
                           <option value="Employee">Employee</option>
-                        </select>
-                       
+                        </select> */}
+
+
                         <button className=" btn btn-outline btn-error rounded-2xl" onClick={() => handleEdit(person.email)}>
-                          Change
+                          Make Manager
                         </button>
 
                         {/* modal for edit  */}

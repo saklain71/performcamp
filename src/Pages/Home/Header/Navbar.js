@@ -83,8 +83,9 @@ const Navbar = () => {
                   <span className="text-rose-400 font-bold lg:block hidden">{user.displayName}</span>
                   
                   {
-                       user.photoURL? <img
+                       user.photoURL? <img referrerPolicy="no-referrer"
                        className="h-8 w-8 rounded-full "
+                       referrerpolicy="no-referrer"
                        src={user.photoURL}
                        alt=""
                      /> :<img src="https://png.pngtree.com/png-vector/20190225/ourlarge/pngtree-vector-avatar-icon-png-image_702436.jpg" alt="" className="h-8 w-8 rounded-full" />

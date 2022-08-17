@@ -3,13 +3,14 @@ import auth from "../firebase.init";
 
 const useToken = user => {
     const [token, setToken] = useState('');
-    console.log(user);
+    // console.log(user);
 
     useEffect(() => {
-        // console.log("inside token", user);
+        console.log("inside token", user);
         const name = user?.user?.displayName;
-        const email = user?.user?.email;
-        const image = user?.user?.photoURL;
+        const email =  user?.user?.email;
+        const image =  user?.puser?.photoURL;
+        console.log(name, email, image);
         const currentUser = {
             name: name,
             email: email,
