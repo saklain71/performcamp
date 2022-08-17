@@ -34,7 +34,6 @@ const UserTask = () => {
        {
                 tasks.length === 0 ? <div className='text-center text-2xl text-red-300'><p>You have no task...</p></div>
                     :
-                   
                     <div>
                         <div className="flex flex-col my-12">
                             <div className=" overflow-x-auto ">
@@ -85,21 +84,21 @@ const UserTask = () => {
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap">
                                                             <div className="">
-                                                                {task.title}
-                                                            </div>
-                                                        </td>
-                                                        <td className="px-6 py-4 whitespace-nowrap">
-                                                            <div className="text-sm text-gray-900">{task.deadline}</div>
-                                                        </td>
-                                                        <td className="px-6 py-4 whitespace-nowrap">
-                                                            <div className="text-sm text-gray-900">{task?.appointee}</div>
-                                                        </td>
+                                                            {task.title}
+ </div>
+     </td>
+     <td className="px-6 py-4 whitespace-nowrap">
+      <div className="text-sm text-gray-900">{task.deadline}</div>
+      </td>
+  <td className="px-6 py-4 whitespace-nowrap">
+    <div className="text-sm text-gray-900">{task?.appointee}</div>
+                  </td>
 
-                                                        <td className="px-6 flex gap-4 py-4 whitespace-nowrap text-right text-sm font-medium">
+     <td className="px-6 flex gap-4 py-4 whitespace-nowrap text-right text-sm font-medium">
 
-                                                            <div className='lg:ml-12'>
-                                                            <label for="details-task-modal" >  </label>
-                                                            <label onClick={() => setDetailsTask(task)} for="details-task-modal" className="btn btn-primary rounded-xl mx-4 text-white">Details</label>
+    <div className='lg:ml-12'>
+                                                            
+         <label onClick={() => setDetailsTask(task)} for="details-task-modal" className="btn btn-primary rounded-xl mx-4 text-white">Details</label>
 
                                                             {/* <button onClick={() => setDetailsTask(task)} className=" btn btn-outline btn-error rounded-2xl mx-4">
                                                                     Details
