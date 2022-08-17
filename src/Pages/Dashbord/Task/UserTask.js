@@ -9,6 +9,7 @@ import DetailsTaskModal from './DetailsTaskModal';
 const UserTask = () => {
     const [tasks, setTasks] = useState([]);
     const [detailsTask, setDetailsTask] = useState(null);
+    const [completeTask, setCompleteTask] = useState(null);
     const [user] = useAuthState(auth);
 
 
@@ -34,57 +35,57 @@ const UserTask = () => {
        {
                 tasks.length === 0 ? <div className='text-center text-2xl text-red-300'><p>You have no task...</p></div>
                     :
-                    <div>
-                        <div className="flex flex-col my-12">
-                            <div className=" overflow-x-auto ">
-                                <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                                    <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                        <table className="min-w-full text-center divide-y divide-gray-200">
-                                            <thead className="bg-gray-50 font-bold">
-                                                <tr>
-                                                    <th
-                                                        scope="col"
-                                                        className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                                    >
-                                                        Serial
-                                                    </th>
-                                                    <th
-                                                        scope="col"
-                                                        className="px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                                    >
-                                                        Title
-                                                    </th>
-                                                    <th
-                                                        scope="col"
-                                                        className="px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                                    >
-                                                        Deadline
-                                                    </th>
-                                                    <th
-                                                        scope="col"
-                                                        className="px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                                    >
-                                                        Appointee
-                                                    </th>
-                                                    <th
-                                                        scope="col"
-                                                        className="px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                                    >
+    <div>
+        <div className="flex flex-col my-12">
+            <div className=" overflow-x-auto ">
+                <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                    <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                        <table className="min-w-full text-center divide-y divide-gray-200">
+                            <thead className="bg-gray-50 font-bold">
+                                <tr>
+        <th
+            scope="col"
+            className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+            Serial
+        </th>
+        <th
+            scope="col"
+            className="px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+            Title
+        </th>
+        <th
+            scope="col"
+            className="px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+            Deadline
+        </th>
+        <th
+            scope="col"
+            className="px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+            Appointee
+        </th>
+        <th
+            scope="col"
+            className="px-6 py-3  text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
 
-                                                    </th>
+        </th>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody className="bg-white divide-y divide-gray-200">
-                                                {
-                                                tasks.map((task, index) => {
-                                                return (
-                                                    <tr key={task._id}>
-                                                        <td className="px-6 py-4 whitespace-nowrap">{index + 1}
-                                                        </td>
-                                                        <td className="px-6 py-4 whitespace-nowrap">
-                                                            <div className="">
-                                                            {task.title}
+            </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+            {
+            tasks.map((task, index) => {
+            return (
+                <tr key={task._id}>
+                    <td className="px-6 py-4 whitespace-nowrap">{index + 1}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="">
+                        {task.title}
  </div>
      </td>
      <td className="px-6 py-4 whitespace-nowrap">
@@ -100,18 +101,18 @@ const UserTask = () => {
                                                             
          <label onClick={() => setDetailsTask(task)} for="details-task-modal" className="btn btn-primary rounded-xl mx-4 text-white">Details</label>
 
-                                                            {/* <button onClick={() => setDetailsTask(task)} className=" btn btn-outline btn-error rounded-2xl mx-4">
-                                                                    Details
-                                                                </button> */}
-                                                              
-                                                                <button className=" btn btn-outline btn-error rounded-2xl">
-                                                                    Complete
-                                                                </button>
-                                                            </div>
+                {/* <button onClick={() => setDetailsTask(task)} className=" btn btn-outline btn-error rounded-2xl mx-4">
+                        Details
+                    </button> */}
+                    
+                    <button className=" btn btn-outline btn-error rounded-2xl">
+                        Complete
+                    </button>
+                </div>
 
-                                                        </td>
-                                                    </tr>
-                                                )
+            </td>
+        </tr>
+    )
                                                 }
                                                     
                                                 )}
