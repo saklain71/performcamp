@@ -1,8 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
+
 
 
 const Dashbord = () => {
+    const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user);
     return (
         <div className="drawer drawer-end">
             <input id="my-drawer-4" type="checkbox" className=" drawer-toggle" />
@@ -22,13 +28,17 @@ const Dashbord = () => {
 
                 <label for="my-drawer-4" class="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-
                     <li><Link to="/dashboard">User Profile</Link></li>
                     <li><Link to="/dashboard/leaderboard">Leader Board </Link></li>
                     <li><Link to="/dashboard/goal">Goal</Link></li>
                     <li><Link to="/dashboard/task">Task</Link></li>
-                    <li><Link to="/dashboard/addtask">Add Task</Link></li>
-                    <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
+                    {
+                        admin && <>
+                        <li><Link to="/dashboard/addtask">Add Task</Link></li>
+                        <li><Link to="/dashboard/addmember">Add Member</Link></li>
+                        <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
+                        </>
+                    }
                     <li><Link to="/dashboard/review">Review</Link></li>
                     <li><Link to="/dashboard/feedback">Feedback</Link></li>
                     <li><Link to="/dashboard/deadline">Deadline</Link></li>
