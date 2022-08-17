@@ -21,7 +21,7 @@ const customStyles = {
   Modal.setAppElement("#root");
 
 export default function UpdateModal({ id, setIsReload, isReload }) {
-    console.log(id);
+    // console.log(id);
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
@@ -53,7 +53,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
       .then((res) => res.json())
       .then((data) => {
         setIsReload(!isReload);
-        console.log(data);
+        // console.log(data);
       }
       )
       
