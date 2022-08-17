@@ -1,17 +1,16 @@
-import { signOut } from 'firebase/auth';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import CompleteTaskModal from './CompleteTaskModal';
 import DetailsTaskModal from './DetailsTaskModal';
 
 const UserTask = () => {
     const [tasks, setTasks] = useState([]);
     const [detailsTask, setDetailsTask] = useState(null);
+    const [completeTask, setCompleteTask] = useState(null);
     const [user] = useAuthState(auth);
-
-
 
     useEffect(() => {
         if (user) {
@@ -28,11 +27,66 @@ const UserTask = () => {
                 })
         }
     }, [user]);
+
+const handleConfirm = ({task, link, setLink})=> {
+
+    console.log('inside user task', link);
+    const pendingTask ={
+        title: task.title,
+        description: task.description,
+        appointee: task.appointee,
+        email: task.email,
+        deadline: '',
+        proof: link
+
+    }
+
+        fetch('http://localhost:5000/pendingReview', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+
+            },
+            body: JSON.stringify(pendingTask)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.success) {
+                    setLink("");
+                }
+
+            })
+  
+        fetch(`http://localhost:5000/task/${task._id}`, {
+            method: 'DELETE',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount) {
+                    toast.success(`task: ${task._id} is deleted`);
+                    const remaining = tasks.filter(t => t._id !== task._id);
+                    setTasks(remaining);
+                    setLink(''); 
+                }
+                
+            })
+
+           
+    }
+
+  
+
     return (
         <div>
        <div>
        {
-                tasks.length === 0 ? <div className='text-center text-2xl text-red-300'><p>You have no task...</p></div>
+                tasks.length === 0 ? <div className='text-center text-2xl text-red-300'><p>You have no task...</p>
+                <p>tasks: {tasks.length}</p></div>
                     :
                     <div>
                         <div className="flex flex-col my-12">
@@ -100,13 +154,8 @@ const UserTask = () => {
                                                             
          <label onClick={() => setDetailsTask(task)} for="details-task-modal" className="btn btn-primary rounded-xl mx-4 text-white">Details</label>
 
-                                                            {/* <button onClick={() => setDetailsTask(task)} className=" btn btn-outline btn-error rounded-2xl mx-4">
-                                                                    Details
-                                                                </button> */}
+                                                            <label onClick={() => setCompleteTask(task)} for="complete-task-modal" className="btn btn-outline btn-error rounded-2xl">Complete</label>
                                                               
-                                                                <button className=" btn btn-outline btn-error rounded-2xl">
-                                                                    Complete
-                                                                </button>
                                                             </div>
 
                                                         </td>
@@ -129,6 +178,11 @@ const UserTask = () => {
             detailsTask && <DetailsTaskModal
                 task={detailsTask}>
             </DetailsTaskModal>}
+           { 
+           completeTask && <CompleteTaskModal
+                task={completeTask}
+                handleConfirm={handleConfirm}>
+            </CompleteTaskModal>}
 
         </div>
     );

@@ -72,9 +72,9 @@ function App() {
           <Route path="leaderboard" element={<LeaderBoard></LeaderBoard>}></Route>
           <Route path="goal" element={<Goal></Goal>}></Route>
 
-          <Route path="addtask" element={<RequireAdmin><AddTask/></RequireAdmin>}></Route>
-          <Route path="addmember" element={<RequireAdmin><AddEmployee/></RequireAdmin>}></Route>
-          <Route path="makeAdmin" element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
+          <Route path="addtask" element={<AddTask/>}></Route>
+          <Route path="addmember" element={<AddEmployee/>}></Route>
+          <Route path="makeAdmin" element={<MakeAdmin/>}></Route>
           
           <Route path="taskList" element={<Tasks/>}></Route>
           <Route path="task" element={<UserTask/>}></Route>
