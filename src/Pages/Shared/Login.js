@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import google from '../../Image/google.png';
 import useToken from '../../hooks/useToken';
+import Loading from './Loading';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,7 +17,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, ResetSending, ResetError] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail, resetSending, ResetError] = useSendPasswordResetEmail(auth);
     const navigate = useNavigate();
     const location = useLocation();
     const [token] = useToken(user || gUser);
@@ -33,6 +34,9 @@ const Login = () => {
 
     if (error || gError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    }
+    if(gLoading || loading || resetSending){
+        return <Loading></Loading>
     }
 
     const resetPassword = async () => {

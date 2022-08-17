@@ -37,6 +37,8 @@ import ConfirmPayment from './Pages/Pricing/ConfirmPayment/ConfirmPayment';
 import Tasks from './Pages/Dashbord/Task/Tasks';
 import MakeAdmin from './Pages/Dashbord/MakeAdmin/MakeAdmin';
 import AddTask from './Pages/Dashbord/Task/AddTask';
+import RequireAuth from './Pages/Shared/RequireAuth';
+import UserTask from './Pages/Dashbord/Task/UserTask';
 
 
 
@@ -63,11 +65,12 @@ function App() {
         <Route path='/about' element={<About />}></Route>
         <Route path='/customers' element={<Customers />}></Route>
 
-        <Route path="/dashboard" element={<Dashbord></Dashbord>}>
+        <Route path="/dashboard" element={<RequireAuth><Dashbord></Dashbord></RequireAuth>}>
           <Route index element={<UserProfile></UserProfile>}></Route>
           <Route path="leaderboard" element={<LeaderBoard></LeaderBoard>}></Route>
           <Route path="goal" element={<Goal></Goal>}></Route>
-          <Route path="task" element={<Tasks/>}></Route>
+          <Route path="taskList" element={<Tasks/>}></Route>
+          <Route path="task" element={<UserTask/>}></Route>
           <Route path="addtask" element={<AddTask/>}></Route>
           <Route path="makeAdmin" element={<MakeAdmin/>}></Route>
           <Route path="review" element={<Review></Review>}></Route>

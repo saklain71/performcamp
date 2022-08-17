@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import Loading from '../../Shared/Loading';
 
 
 const AddTask = () => {
@@ -13,34 +14,31 @@ const AddTask = () => {
     const { reset } = useForm();
     const handleTask = event => {
         event.preventDefault();
-        console.log('add task', event?.target?.title.value);
 
         const task = {
             title: event?.target?.title?.value,
             description: event?.target?.description?.value,
             email: event?.target?.email?.value,
-            deadline: ''
+            appointee: user?.email,
+            deadline: '',
+
         }
 
+        event.target.value = "";
         fetch('http://localhost:5000/task', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-               
+
             },
             body: JSON.stringify(task)
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.success) {
-                    event.target.reset();
-                }
-                else {
-
+                    document.getElementById("myForm").reset();
                 }
 
-                reset();
             })
 
     }
@@ -54,7 +52,7 @@ const AddTask = () => {
             <dh-component>
 
 
-                <form id="" onSubmit={handleTask}>
+                <form id="myForm" onSubmit={handleTask}>
                     <div class="bg-base-100 dark:bg-gray-800">
                         <div class="container mx-auto  dark:bg-gray-800 rounded">
                             <div class="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5  dark:bg-gray-800">
@@ -94,11 +92,11 @@ const AddTask = () => {
                         </div>
                         <div class="mx-auto pt-4">
                             <div class="container mx-auto">
-                                
-                            <div class="mx-auto pt-4">
-                                <div class="container mx-auto">
 
-                                    
+                                <div class="mx-auto pt-4">
+                                    <div class="container mx-auto">
+
+
 
                                         <div class="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                                             <label for="Email" class="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">Email</label>
@@ -129,21 +127,21 @@ const AddTask = () => {
                                             </div>
                                         </div>
                                         <div class="flex  justify-start">
-                                    <div class="datepicker relative form-floating mb-3 xl:w-96" data-mdb-toggle-button="false">
-                                        <input type="text"
-                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                        placeholder="Select a date" data-mdb-toggle="datepicker" />
-                                        <label for="floatingInput" class="text-gray-700">Select a deadline</label>
-                                    </div>
-                                    </div>
+                                            <div class="datepicker relative form-floating mb-3 xl:w-96" data-mdb-toggle-button="false">
+                                                <input type="text"
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                                    placeholder="Select a date" data-mdb-toggle="datepicker" />
+                                                <label for="floatingInput" class="text-gray-700">Select a deadline</label>
+                                            </div>
+                                        </div>
 
                                     </div>
-                                    
-               
+
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
+
                         <div class="container mx-auto mt-10 rounded bg-gray-100 dark:bg-gray-700 w-11/12 xl:w-full">
                             <div class="xl:w-full py-5 px-8">
                                 <div class="flex items-center mx-auto">
@@ -191,7 +189,7 @@ const AddTask = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                 </form>
 
 
