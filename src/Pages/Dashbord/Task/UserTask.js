@@ -9,7 +9,7 @@ import DetailsTaskModal from './DetailsTaskModal';
 const UserTask = () => {
     const [tasks, setTasks] = useState([]);
     const [detailsTask, setDetailsTask] = useState(null);
-    const [completeTask, setCompleteTask] = useState(null);
+    
     const [user] = useAuthState(auth);
 
 
