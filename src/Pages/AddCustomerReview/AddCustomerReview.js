@@ -18,7 +18,7 @@ const AddCustomerReview = () => {
   }
 
   const onSubmit = data => {
-    
+    reset()
     data.rating = rating
     data.image = user.photoURL
     fetch(`http://localhost:5000/customerReviews`, {
@@ -35,10 +35,10 @@ const AddCustomerReview = () => {
 
         if (data.acknowledged === true) {
           toast("Review Has been submit Successfully!")
-          reset();
+          
         }
 
-      },[reset]);
+      })
   };
 
 
