@@ -23,7 +23,7 @@ const Tasks = () => {
             .then((data) => setTasks(data));
     }, [isReload]);
 
-    
+
 
     return (
         <div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import ReactStars from "react-rating-stars-component";
-import {  RatingView } from 'react-simple-star-rating'
+import { RatingView } from 'react-simple-star-rating'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,26 +16,26 @@ import 'swiper/css/pagination'
 import "../../styles.css";
 // import Swiper core and required modules
 import SwiperCore, {
-    Autoplay,Parallax
+    Autoplay, Parallax
 } from 'swiper';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 // install Swiper modules
-SwiperCore.use([Autoplay,Parallax]);
+SwiperCore.use([Autoplay, Parallax]);
 
 const CustomerReview = () => {
-    const quoteRight=<FontAwesomeIcon icon={faQuoteRight}></FontAwesomeIcon>
-    const quoteLeft=<FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
-   const [displayReviews,setDisplayReviews]=useState([])
-   useEffect(()=>{
+    const quoteRight = <FontAwesomeIcon icon={faQuoteRight}></FontAwesomeIcon>
+    const quoteLeft = <FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
+    const [displayReviews, setDisplayReviews] = useState([])
+    useEffect(() => {
 
-       fetch(`http://localhost:5000/customerReviews`)
+        fetch(`http://localhost:5000/customerReviews`)
 
-       .then(res=>res.json())
-       .then(data=>setDisplayReviews(data))
-   },[])
-   
+            .then(res => res.json())
+            .then(data => setDisplayReviews(data))
+    }, [])
+
     return (
         <div className='py-5'>
            <div className=' pb-5'>
