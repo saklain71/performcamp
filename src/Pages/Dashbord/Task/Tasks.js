@@ -23,7 +23,7 @@ const Tasks = () => {
             .then((data) => setTasks(data));
     }, [isReload]);
 
-    
+
 
     return (
         <div>
@@ -61,7 +61,7 @@ const Tasks = () => {
                             {userProfile.map((user) => (
                                 
                             <div class="  space-x-2">
-                                <img src={user?.image} 
+                                <img src={user?.image} referrerpolicy="no-referrer"
                                 class="w-6 h-6  rounded-full"/>
                                  
                             </div>

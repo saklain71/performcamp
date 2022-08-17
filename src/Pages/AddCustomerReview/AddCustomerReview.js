@@ -8,19 +8,17 @@ import { Rating } from 'react-simple-star-rating'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
+
 const AddCustomerReview = () => {
   const { register, handleSubmit, reset } = useForm();
-  const [user] = useAuthState(auth)
-
-
-  const [rating, setRating] = useState(0)
+  const [user] = useAuthState(auth);
+  const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
     setRating(rate)
   }
 
-
   const onSubmit = data => {
-    reset()
+    
     data.rating = rating
     data.image = user.photoURL
     fetch(`http://localhost:5000/customerReviews`, {
@@ -37,9 +35,10 @@ const AddCustomerReview = () => {
 
         if (data.acknowledged === true) {
           toast("Review Has been submit Successfully!")
+          reset();
         }
 
-      })
+      },[reset]);
   };
 
 
