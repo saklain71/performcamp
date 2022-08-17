@@ -8,16 +8,14 @@ import { Rating } from 'react-simple-star-rating'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
+
 const AddCustomerReview = () => {
   const { register, handleSubmit, reset } = useForm();
-  const [user] = useAuthState(auth)
-
-
-  const [rating, setRating] = useState(0)
+  const [user] = useAuthState(auth);
+  const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
     setRating(rate)
   }
-
 
   const onSubmit = data => {
     
