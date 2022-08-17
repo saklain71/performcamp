@@ -1,8 +1,6 @@
-import { signOut } from 'firebase/auth';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import CompleteTaskModal from './CompleteTaskModal';
