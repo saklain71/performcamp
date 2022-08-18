@@ -41,6 +41,7 @@ import AddEmployee from './Pages/AddEmployee/AddEmployee';
 import RequireAdmin from './Pages/Shared/RequireAdmin';
 import RequireAuth from './Pages/Shared/RequireAuth';
 import UserTask from './Pages/Dashbord/Task/UserTask';
+import RequireManager from './Pages/Shared/RequireManager';
 
 
 
@@ -72,13 +73,13 @@ function App() {
           <Route path="leaderboard" element={<LeaderBoard></LeaderBoard>}></Route>
           <Route path="goal" element={<Goal></Goal>}></Route>
 
-          <Route path="addtask" element={<AddTask/>}></Route>
-          <Route path="addmember" element={<AddEmployee/>}></Route>
-          <Route path="makeAdmin" element={<MakeAdmin/>}></Route>
+          <Route path="addtask" element={<RequireManager><AddTask/></RequireManager>}></Route>
+          <Route path="addmember" element={<RequireManager><AddEmployee/></RequireManager>}></Route>
+          <Route path="makeManager" element={<RequireManager><MakeAdmin/></RequireManager>}></Route>
           
-          <Route path="taskList" element={<Tasks/>}></Route>
+          <Route path="taskList" element={<RequireManager><Tasks/></RequireManager>}></Route>
           <Route path="task" element={<UserTask/>}></Route>
-          <Route path="review" element={<Review></Review>}></Route>
+          <Route path="managerReview" element={<Review></Review>}></Route>
           <Route path="feedback" element={<Feedback></Feedback>}></Route>
           <Route path="deadline" element={<Deadline></Deadline>}></Route>
         </Route>
