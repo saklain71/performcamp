@@ -40,6 +40,7 @@ import AddTask from './Pages/Dashbord/Task/AddTask';
 import AddEmployee from './Pages/AddEmployee/AddEmployee';
 
 import UserTask from './Pages/Dashbord/Task/UserTask';
+import EmployeeReview from './Pages/Dashbord/EmployeeReview';
 
 
 
@@ -78,6 +79,7 @@ function App() {
           <Route path="taskList" element={<Tasks/>}></Route>
           <Route path="task" element={<UserTask/>}></Route>
           <Route path="review" element={<Review></Review>}></Route>
+          <Route path="employeeReview" element={<EmployeeReview></EmployeeReview>}></Route>
           <Route path="feedback" element={<Feedback></Feedback>}></Route>
           <Route path="deadline" element={<Deadline></Deadline>}></Route>
         </Route>

@@ -38,6 +38,7 @@ const Dashbord = () => {
                     <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
 
                 <li><Link to="/dashboard/review">Review</Link></li>
+                <li><Link to="/dashboard/employeeReview">Review</Link></li>
                 <li><Link to="/dashboard/feedback">Feedback</Link></li>
                 <li><Link to="/dashboard/deadline">Deadline</Link></li>
                 <label for="my-drawer-4" class="drawer-button font-bold btn btn-error">
