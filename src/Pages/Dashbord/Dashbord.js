@@ -14,7 +14,7 @@ const Dashbord = () => {
             <input id="my-drawer-4" type="checkbox" className=" drawer-toggle" />
 
             <div className="drawer-content  m-5">
-                <label for="my-drawer-4" class="drawer-button  btn btn-error">Explore Dashbord
+                <label for="my-drawer-4" class="drawer-button  btn btn-error">Explore Dashboard
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
                     </svg>
