@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import ManagerReviewModal from './ManagerReviewModal';
 import ReviewDetailModal from './ReviewDetailModal';
+import { toast } from 'react-toastify';
+import FeedbackModal from './FeedbackModal';
 
 const Review = () => {
     const [reviews, setReviews] = useState([]);
     const [detailsReview, setDetailsReview] = useState(null);
+    const [feedback, setFeedback] = useState(null);
     const [user] = useAuthState(auth);
 
     useEffect(() => {
@@ -18,11 +22,65 @@ const Review = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('pending task', data);
                     setReviews(data)
                 })
         }
     }, [user]);
+
+   
+
+    const handleFeedbackSubmit = ({review, comment}) =>{
+        console.log('inside review', review);
+
+        const feedbackTask ={
+            feedbackId: review._id,
+            title: review.title,
+            description: review.description,
+            email: review.email,
+            appointeeEmail: user?.email,
+            appointeeName: user?.displayName,
+            deadline: '',
+            comment: comment
+    
+        }
+    
+            fetch('http://localhost:5000/feedback', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+    
+                },
+                body: JSON.stringify(feedbackTask)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.success) {
+                       toast('Feedback is posted succesfully')
+                    }
+    
+                })
+      
+            fetch(`http://localhost:5000/pendingReview/${review._id}`, {
+                method: 'DELETE',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        toast.success(`review: ${review._id} is deleted`);
+                        const remaining = reviews.filter(r => r._id !== review._id);
+                        setReviews(remaining);
+                    }
+                    
+                })
+    }
+
+  
+
     return (
         <div>
             
@@ -42,7 +100,7 @@ const Review = () => {
     {
         reviews.map(review =>(
         
-        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+        <tr key={review._id} class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
             <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Title</span>
                 <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">{review.title}</span>
@@ -59,8 +117,9 @@ const Review = () => {
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
                 <label onClick={() => setDetailsReview(review)} for="details-review-modal" className="btn text-stone-100 btn-sm border-none bg-secondary rounded-md p-1 hover:text-yellow-100 mr-2">Details</label>
                 
-                <a href="#" class="text-stone-100 border bg-success rounded-md p-1 hover:text-yellow-100 mr-2">Review</a>
-                <a href="#" class="text-stone-100 border bg-error rounded-md p-1 hover:text-success ">Feedback</a>
+                <label for="details-review-modal" className="btn text-stone-100 btn-sm border-none bg-secondary rounded-md p-1 hover:text-yellow-100 mr-2">Review</label>
+
+                <label onClick={() => setFeedback(review)} for="feedback-modal" className="btn btn-sm text-stone-100 border-none bg-error rounded-md p-1 hover:text-success hover:text-yellow-100 mr-2">Feedback</label>
             </td>
         </tr>
         ))
@@ -72,6 +131,15 @@ const Review = () => {
             detailsReview && <ReviewDetailModal
                 review={detailsReview}>
             </ReviewDetailModal>}
+        
+
+            {
+                feedback && <FeedbackModal 
+                review={feedback}
+                handleFeedbackSubmit={handleFeedbackSubmit}>
+                </FeedbackModal>
+            }
+            
         </div>
     );
 };
