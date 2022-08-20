@@ -41,6 +41,10 @@ import AddEmployee from './Pages/AddEmployee/AddEmployee';
 import RequireAdmin from './Pages/Shared/RequireAdmin';
 import RequireAuth from './Pages/Shared/RequireAuth';
 import UserTask from './Pages/Dashbord/Task/UserTask';
+import StoryLeadership from './Pages/Company/StoryLeadership';
+import OurValues from './Pages/Company/OurValues';
+import SocialResponsibility from './Pages/Company/SocialResponsibility';
+import Career from './Pages/Company/Career';
 
 
 
@@ -65,7 +69,10 @@ function App() {
         <Route path='*' element={<NotFound />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/about' element={<About />}></Route>
-        <Route path='/customers' element={<Customers />}></Route>
+        <Route path='/story-leadership' element={<StoryLeadership />}></Route>
+        <Route path='/our-values' element={<OurValues/>}></Route>
+        <Route path='/social-responsibility' element={<SocialResponsibility />}></Route>
+        <Route path='/career' element={<Career />}></Route>
 
         <Route path="/dashboard" element={<RequireAuth><Dashbord></Dashbord></RequireAuth>}>
           <Route index element={<UserProfile></UserProfile>}></Route>
