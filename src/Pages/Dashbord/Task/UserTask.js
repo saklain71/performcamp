@@ -87,7 +87,7 @@ const handleConfirm = ({task, link, setLink})=> {
        <div>
        {
                 tasks.length === 0 ? <div className='text-center text-2xl text-red-300'><p>You have no task...</p>
-                <p>tasks: {tasks.length}</p></div>
+                </div>
                     :
     <div>
         <div className="flex flex-col my-12">

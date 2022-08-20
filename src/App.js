@@ -40,6 +40,7 @@ import AddTask from './Pages/Dashbord/Task/AddTask';
 import AddEmployee from './Pages/AddEmployee/AddEmployee';
 
 import UserTask from './Pages/Dashbord/Task/UserTask';
+import EmployeeReview from './Pages/Dashbord/EmployeeReview';
 import RequireManager from './Pages/Shared/RequireManager';
 
 
@@ -78,6 +79,8 @@ function App() {
           
           <Route path="taskList" element={<RequireManager><Tasks/></RequireManager>}></Route>
           <Route path="task" element={<UserTask/>}></Route>
+          
+          <Route path="employeeReview" element={<EmployeeReview></EmployeeReview>}></Route>
           <Route path="managerReview" element={<Review></Review>}></Route>
           <Route path="feedback" element={<Feedback></Feedback>}></Route>
           <Route path="deadline" element={<Deadline></Deadline>}></Route>
