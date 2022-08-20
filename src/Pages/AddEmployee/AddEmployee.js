@@ -7,7 +7,6 @@ import { toast } from 'react-toastify';
 const AddEmployee = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const imgStorageKey = process.env.REACT_APP_IMAGE_STORAGE_KEY
-
     const onSubmit = async data => {
         const image = data.img[0];
         const formData = new FormData();

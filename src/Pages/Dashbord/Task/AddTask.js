@@ -96,7 +96,8 @@ const AddTask = () => {
                 <label class="label">
                 <span class="label-text font-bold">Receiver</span>
             </label>
-            <input {...register("email", { required: "Email Address is required" })} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-amber-200 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" />
+            <input {...register("employeeName", { required: "Employee Name Address is required" })} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 mb-2 px-4 bg-amber-200 text-gray-700 placeholder-gray-500 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder='Employee Name' />
+            <input {...register("email", { required: "Email Address is required" })} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-amber-200 text-gray-700 placeholder-gray-500 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder='Email' />
             <p className='text-red-500'>{errors.email?.message}</p>
             
                     </div>
@@ -106,7 +107,7 @@ const AddTask = () => {
                 <div class="datepicker   mb-3 xl:w-96" data-mdb-toggle-button="false">
                 <label for="floatingInput" class="text-gray-700"></label>
                     <input {...register("deadline", { required: "Deadline is required" })} type="text"
-                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-amber-200 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-amber-200 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                         placeholder="Select a deadline" data-mdb-toggle="datepicker" />
                         <p className='text-red-500'>{errors.deadline?.message}</p>
                     
