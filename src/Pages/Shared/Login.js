@@ -30,7 +30,7 @@ const Login = () => {
         }, [token, from, navigate]);
 
     let signInError;
-
+    
 
     if (error || gError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
