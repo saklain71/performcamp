@@ -3,6 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import {faStar} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toast } from 'react-toastify';
+
 
 const EmployeeReview = () => {
 
@@ -20,17 +22,59 @@ const EmployeeReview = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    
+                   const sum = data.map(d => d.rating).reduce((prev, curr) => prev + curr, 0);
+                   console.log()
                     setReviews(data)
                 })
         }
     }, [user]);
 
+
+const handleUpdate = () =>{
+
+    function getRatingSum(a){
+        console.log('get array', a);
+        let total=0;
+        for(let i in a) { 
+            total += parseFloat(a[i].rating);
+        }
+        return total;
+    }
+    
+    let ratings= getRatingSum(reviews);
+    console.log(ratings);
+
+const updateleaderboard = {
+    employeeName: user?.displayName,
+    employeeImage: user?.photoURL || 'https://png.pngtree.com/png-vector/20190225/ourlarge/pngtree-vector-avatar-icon-png-image_702436.jpg',
+    employeeEmail: user?.email,
+    completedTasks: reviews.length,
+    ratings: ratings
+}
+    
+    fetch(`http://localhost:5000/leaderboard/${user?.email}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(updateleaderboard)
+    })
+        .then(res => res.json())
+        .then(data => {
+           console.log(data); 
+           toast.success('You are short listed for employee of the month') 
+        })
+
+}
+    
     return (
         <div>
             <h1 className='text-2xl text-center font-bold text-primary text-center py-8'>You have got {reviews.length} reviews from Managers</h1>
-            <div className='grid lg:grid-cols-2  lg:mx-16 '>
+
             
+            <p onClick={handleUpdate} className='text-rose-400 text-xl font-bold text-center'><button className='btn btn-success rounded'>Update</button> your reviews to leaderboard to be the best employee of the month! </p>
+            
+            <div className='grid lg:grid-cols-2  lg:mx-16 '>
             {
   reviews.map(review=>
             <div key={review._id} class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
