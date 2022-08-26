@@ -9,13 +9,13 @@ import { toast } from 'react-toastify';
 import "./Pricing.css";
 
 const Pricing = () => {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const { register, formState: { errors }, handleSubmit, loading, reset } = useForm();
     const navigate = useNavigate();
 
     const onSubmit = (data) => {
-
-        fetch(`http://localhost:5000/bookings`, {
-
+         data.price = (data.employee*data.perHeadPrice).toString()
+        fetch(`https://whispering-gorge-29329.herokuapp.com/bookings`, {
+     
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const Pricing = () => {
                     <div class="lg:mx-10">
                         <h1 className='text-4xl font-semibold'>Simple And Affordable Pricing</h1>
                         <p className='py-5'>Every feature is included in one low price and every customer gets a dedicated customer success manager for implementation, training and support at no additional cost.</p>
-                        <label for="pricing" class="btn modal-button hover:-translate-y-1 hover:scale-110 hover:bg-base-100 btn-outline text-black hover:text-black font-bold">Buy A Service</label>
+                        <label for="pricing" class="btn modal-button hover:-translate-y-1 hover:scale-110 hover:bg-base-100 btn-outline text-black hover:text-black font-bold">Get a Price Quote</label>
 
                         <input type="checkbox" id="pricing" class="modal-toggle" />
                         <div class="modal">
@@ -92,15 +92,15 @@ const Pricing = () => {
                                             <label class="label">
                                                 <span class="label-text">Number of Employees</span>
                                             </label>
-                                            <input {...register("employee", { required: "Employee number is required" })} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-transparent" type='text' id='employee' />
+                                            <input {...register("employee", { required: "Employee number is required" })} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-transparent" type='number' id='employee' min="15" max="50" />
                                             <p className='text-red-500'>{errors.employee?.message}</p>
                                         </div>
 
                                         <div>
                                             <label class="label">
-                                                <span class="label-text">Price</span>
+                                                <span class="label-text">Price Per Employee</span>
                                             </label>
-                                            <input {...register("price")} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-transparent" type='text' value={2999} readOnly id='price' />
+                                            <input {...register("perHeadPrice")} class="input border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-transparent" type='text' id='price' value={12} />
                                         </div>
                                     </div>
 
@@ -130,15 +130,15 @@ const Pricing = () => {
                         <h1 className='text-3xl ml-5 font-bold'>Professional</h1>
                     </div>
                     <div className='py-5 px-16 h-32 bg-pink-200'>
-                        <h1 className='relative'><sapn className='font-semibold text-2xl absolute top-0 left-0'>$</sapn><span className='ml-4 text-4xl font-bold'>2999</span></h1>
-                        <p>For 150-200 employee per month</p>
+                        <h1 className='relative'><sapn className='font-semibold text-2xl absolute top-0 left-0'>$</sapn><span className='ml-4 text-4xl font-bold'>12</span></h1>
+                        <p>Per Employee Per Month</p>
                     </div>
                     <div className='mt-12 px-8'>
                         <ul>
                             <li className='mb-7'><i class="fas fa-check-circle mr-3"></i>All professional features plus...</li>
                             <li className='mb-7'><i class="fas fa-check-circle mr-3"></i>Senior Customer Success Manager</li>
                             <li className='mb-7'><i class="fas fa-check-circle mr-3"></i>Enhanced On-boarding and Training</li>
-                            <li className='mb-7'><i class="fas fa-check-circle mr-3"></i>Custom Implementation</li>
+                            <li className='mb-7'><i class="fas fa-check-circle mr-3"></i>15-50 Employees Will Get Professional Service</li>
                         </ul>
 
                     </div>
@@ -165,7 +165,7 @@ const Pricing = () => {
                     <div class="lg:mx-10">
                         <p class="text-xl whitespace-normal lg:font-bold font-semibold py-6">See how PerformCamp can streamline and automate your performance management process.</p>
                         <div className='flex flex-col justify-center items-center'>
-                            <label for="pricing" class="btn modal-button w-48 mb-5 hover:-translate-y-1 hover:scale-110 hover:bg-base-100 btn-outline text-black hover:text-black font-bold">Buy A Service</label>
+                            <label for="pricing" class="btn modal-button w-48 mb-5 hover:-translate-y-1 hover:scale-110 hover:bg-base-100 btn-outline text-black hover:text-black font-bold">Get a Price Quote</label>
                             <button className='hover:-translate-y-1 hover:scale-110 btn btn-error w-40 text-white font-bold'>Get A Demo</button>
                         </div>
                     </div>

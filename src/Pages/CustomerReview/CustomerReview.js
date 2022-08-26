@@ -30,7 +30,7 @@ const CustomerReview = () => {
     const [displayReviews, setDisplayReviews] = useState([])
     useEffect(() => {
 
-        fetch(`http://localhost:5000/customerReviews`)
+        fetch(`https://whispering-gorge-29329.herokuapp.com/customerReviews`)
 
             .then(res => res.json())
             .then(data => setDisplayReviews(data))

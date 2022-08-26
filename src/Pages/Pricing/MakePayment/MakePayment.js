@@ -10,7 +10,7 @@ const MakePayment = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://whispering-gorge-29329.herokuapp.com/bookings`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const MakePayment = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are You Sure?')
         if (proceed) {
-            const url = `http://localhost:5000/bookings/${id}`
+            const url = `https://whispering-gorge-29329.herokuapp.com/bookings/${id}`
             fetch(url, {
                 method: "DELETE",
                 headers: {
@@ -57,8 +57,13 @@ const MakePayment = () => {
                     bookings.map((booking) =>
                         <div class="card w-full bg-base-100 shadow-xl">
                             <div class="card-body">
-                                <h2 class="card-title">Service Type</h2>
-                                <h3>{booking?.service}</h3>
+                                <div className='flex flex-row justify-between'>
+                                    <div>
+                                        <h2 class="card-title">Service Type</h2>
+                                        <h3>{booking?.service}</h3>
+                                    </div>
+                                    <h2>Total Amount: <span className="text-2xl font-bold">${booking?.price}</span></h2>
+                                </div>
                                 <div class="card-actions justify-end items-center">
                                     {(booking.price && !booking.paid) && <Link class="btn btn-sm btn-primary" to={`/confirmPayment/${booking._id}`}>Buy Now</Link>}
                                     {(booking.price && booking.paid) && <span className='text-green-600 font-bold'>Paid</span>}

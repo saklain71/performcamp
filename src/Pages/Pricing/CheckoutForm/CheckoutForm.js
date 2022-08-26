@@ -17,7 +17,7 @@ const CheckoutForm = ({ booking }) => {
     const { _id, price, organization, email, service } = booking;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://whispering-gorge-29329.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -83,7 +83,7 @@ const CheckoutForm = ({ booking }) => {
                 price: price    
             }
 
-            fetch(`http://localhost:5000/bookings/${_id}`,{
+            fetch(`https://whispering-gorge-29329.herokuapp.com/bookings/${_id}`,{
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "performcamp-8967f"
-  }
+    "default": "performcamp-home",
+    "hosting": "performcamp-home"
+  },
+  "targets": {}
 }
