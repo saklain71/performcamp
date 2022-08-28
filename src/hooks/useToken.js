@@ -8,8 +8,8 @@ const useToken = user => {
     useEffect(() => {
         console.log("inside token", user);
         const name = user?.user?.displayName;
-        const email = user?.user?.email;
-        const image = user?.puser?.photoURL;
+        const email =  user?.user?.email;
+        const image =  user?.user?.photoURL;
         console.log(name, email, image);
         const currentUser = {
             name: name,
@@ -29,7 +29,7 @@ const useToken = user => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    //console.log('data inside useToken', data);
+                    // console.log('data inside useToken', data);
                     const accessToken = data.token;
                     localStorage.setItem('accessToken', accessToken)
                     setToken(accessToken);

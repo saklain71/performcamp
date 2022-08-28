@@ -26,8 +26,8 @@ const AddTask = () => {
         //     deadline: '',
 
         // }
-
-
+            
+        data.senderImage=user?.photoURL;
         fetch('http://localhost:5000/task', {
             method: 'POST',
             headers: {
