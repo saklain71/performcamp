@@ -23,25 +23,12 @@ import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Customers from './Pages/Customers/Customers';
 //import RequireAuth from './Pages/Shared/RequireAuth';
-import Dashbord from './Pages/Dashbord/Dashbord';
-import LeaderBoard from './Pages/Dashbord/LeaderBoard';
-import Goal from './Pages/Dashbord/Goal';
-import Review from './Pages/Dashbord/Review';
-import Feedback from './Pages/Dashbord/Feedback';
-import Deadline from './Pages/Dashbord/Deadline';
-import UserProfile from './Pages/Dashbord/UserProfile';
+
 
 import MakePayment from './Pages/Pricing/MakePayment/MakePayment';
 import ConfirmPayment from './Pages/Pricing/ConfirmPayment/ConfirmPayment';
 
-import Tasks from './Pages/Dashbord/Task/Tasks';
-import MakeAdmin from './Pages/Dashbord/MakeAdmin/MakeAdmin';
-import AddTask from './Pages/Dashbord/Task/AddTask';
-import AddEmployee from './Pages/AddEmployee/AddEmployee';
 
-import UserTask from './Pages/Dashbord/Task/UserTask';
-import EmployeeReview from './Pages/Dashbord/EmployeeReview';
-import RequireManager from './Pages/Shared/RequireManager';
 
 
 
@@ -68,23 +55,7 @@ function App() {
         <Route path='/about' element={<About />}></Route>
         <Route path='/customers' element={<Customers />}></Route>
 
-        <Route path="/dashboard" element={<Dashbord></Dashbord>}>
-          <Route index element={<UserProfile></UserProfile>}></Route>
-          <Route path="leaderboard" element={<LeaderBoard></LeaderBoard>}></Route>
-          <Route path="goal" element={<Goal></Goal>}></Route>
-
-          <Route path="addtask" element={<RequireManager><AddTask/></RequireManager>}></Route>
-          <Route path="addmember" element={<RequireManager><AddEmployee/></RequireManager>}></Route>
-          <Route path="makeManager" element={<RequireManager><MakeAdmin/></RequireManager>}></Route>
-          
-          <Route path="taskList" element={<RequireManager><Tasks/></RequireManager>}></Route>
-          <Route path="task" element={<UserTask/>}></Route>
-          
-          <Route path="employeeReview" element={<EmployeeReview></EmployeeReview>}></Route>
-          <Route path="managerReview" element={<Review></Review>}></Route>
-          <Route path="feedback" element={<Feedback></Feedback>}></Route>
-          <Route path="deadline" element={<Deadline></Deadline>}></Route>
-        </Route>
+        
 
       </Routes>
       <ChatwootWidget />
