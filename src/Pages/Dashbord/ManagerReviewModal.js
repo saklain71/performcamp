@@ -19,7 +19,7 @@ const ManagerReviewModal = ({ onSubmit, review}) => {
     <textarea rows="2" cols="45" className="border-2 p-2 text-center  mx-auto border-blue-900 rounded-md" placeholder="Share your experience with this employee" {...register("description")} />
 
 
-    <textarea rows="1" cols="10" className="border-2 p-2 text-center mx-auto border-blue-900 rounded-md" placeholder="rating" {...register("rating")} />
+    <input rows="1" cols="10" className="border-2 p-2 text-center mx-auto border-blue-900 rounded-md" placeholder="Rating out of 5" {...register("rating")} />
     
 
   

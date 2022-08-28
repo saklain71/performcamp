@@ -28,7 +28,7 @@ const EmployeeReview = () => {
 
     return (
         <div>
-            <h1 className='text-2xl text-center font-bold text-primary text-center py-8'>You have got {reviews.length} reviews from Managers</h1>
+            <h1 className='text-2xl font-bold text-primary text-center py-8'>You have got {reviews.length} reviews from Managers</h1>
             <div className='grid lg:grid-cols-2  lg:mx-16 '>
             
             {
@@ -46,7 +46,7 @@ const EmployeeReview = () => {
   </div>
   
   <div class="flex justify-between mt-4">
-  <p><span className='text-warning'>{starRating}</span> <span className='text-xl font-medium text-indigo-500'>{review.rating}/10</span></p>
+  <p><span className='text-warning'>{starRating}</span> <span className='text-xl font-medium text-indigo-500'>{review.rating}/5</span></p>
     <p class="text-xl font-medium text-indigo-500">{review.givenBy}</p>
   </div>
   

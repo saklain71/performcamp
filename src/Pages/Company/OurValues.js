@@ -10,7 +10,7 @@ import manOnBar from '../../Image/team/value Icon/man-on-bar-charts.png'
 const OurValues = () => {
     return (
         <div>
-            <h4 className='bg-purple-300 lg:p-10 p-5 text-center font-semibold lg:text-3xl text-2xl'>Our Values</h4>
+            <h4 className='bg-purple-100 lg:p-10 p-5 text-center font-semibold lg:text-3xl text-2xl'>Our Values</h4>
             <h3 className='font-bold lg:text-5xl text-2xl text-center pt-7 pb-3'>Our core values guide everything <br /> we do</h3>
             <div className='lg:text-center text-justify px-2 lg:px-52'>
                 <p className='text-lg'>Our core values give us a framework for leadership and daily decisions, and help us enjoy our time at work. Sounds so simple, but too often companies get caught up in politics, ivory-tower attitudes, and market mania instead of focusing on the things that probably made them successful in the first place.</p>

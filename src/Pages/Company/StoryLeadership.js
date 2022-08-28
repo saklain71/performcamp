@@ -12,7 +12,7 @@ import erfath from '../../Image/team/erfath.png'
 const StoryLeadership = () => {
     return (
         <div className='container'>
-            <h4 className='bg-purple-300 lg:p-10 p-5 text-center font-semibold lg:text-3xl text-2xl'>Our Story And Leadership</h4>
+            <h4 className='bg-purple-100 lg:p-10 p-5 text-center font-semibold lg:text-3xl text-2xl'>Our Story And Leadership</h4>
             <div class="hero lg:py-20 pb-5 bg-base-200">
                 <div class="flex flex-col lg:flex-row lg:justify-around items-center gap-16">
                     <img src={team} class=" rounded-lg shadow-2xl" style={{ width: '600px' }} />
@@ -31,7 +31,7 @@ const StoryLeadership = () => {
             <div class="hero lg:py-20 py-5 px-2 bg-base-200">
                 <div class="flex flex-col lg:flex-row items-center">
                     <img src={img1} class="lg:max-w-lg rounded-lg" />
-                    <div className='py-5'>
+                    <div className='py-5 lg:mx-10'>
                         <h1 class="lg:text-4xl text-2xl  font-bold">We started by asking questions.</h1>
                         <p class="py-6 text-justify">Why is enterprise software so hard to use? What do businesses need to support change? And how can we give people more time back for what really matters?</p>
                     </div>
@@ -40,7 +40,7 @@ const StoryLeadership = () => {
             <div class="hero lg:py-28 py-5 px-2 bg-base-200">
                 <div class="flex flex-col lg:flex-row-reverse items-center">
                     <img src={img2} class="lg:max-w-lg rounded-lg" />
-                    <div className='py-5'>
+                    <div className='py-5 lg:mx-10'>
                         <h1 class="lg:text-4xl text-2xl font-bold">We listened to the answers.</h1>
                         <p class="py-6 text-justify">Our curiosity led us to create something new—a finance, HR, and planning system that evolves as business evolves, and a company that’s out to do right by employees, customers, and the world.</p>
                     </div>
@@ -49,7 +49,7 @@ const StoryLeadership = () => {
             <div class="hero lg:py-20 py-5 px-2 bg-base-200">
                 <div class="flex flex-col lg:flex-row items-center">
                     <img src={img3} class="lg:max-w-lg rounded-lg " />
-                    <div>
+                    <div className='py-5 lg:mx-10'>
                         <h1 class="lg:text-4xl text-2xl font-bold">And we haven’t stopped since.</h1>
                         <p class="py-6 text-justify">We partner closely with our customers to understand their needs. Then we innovate like crazy to give them the technology to get there. Together, we’re shaping the future of work.</p>
                     </div>

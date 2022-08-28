@@ -8,8 +8,8 @@ const useToken = user => {
     useEffect(() => {
         console.log("inside token", user);
         const name = user?.user?.displayName;
-        const email =  user?.user?.email;
-        const image =  user?.puser?.photoURL;
+        const email = user?.user?.email;
+        const image = user?.puser?.photoURL;
         console.log(name, email, image);
         const currentUser = {
             name: name,

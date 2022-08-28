@@ -46,6 +46,8 @@ import SocialResponsibility from './Pages/Company/SocialResponsibility';
 import Career from './Pages/Company/Career';
 import EmployeeReview from './Pages/Dashbord/EmployeeReview';
 import RequireManager from './Pages/Shared/RequireManager';
+import RequireAuth from './Pages/Shared/RequireAuth';
+import WelcomeMessage from './Pages/Pricing/WelcomeMessage/WelcomeMessage';
 
 
 
@@ -60,9 +62,10 @@ function App() {
         <Route path="/reviewCheckin" element={<ReviewCheckin />} />
         <Route path="/goalManagement" element={<GoalManagement />} />
         <Route path="/continuousFeedback" element={<ContinuousFeedback />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/pricing" element={<RequireAuth><Pricing/></RequireAuth>} />
         <Route path="/makePayment" element={<MakePayment />} />
         <Route path="/confirmPayment/:id" element={<ConfirmPayment />} />
+        <Route path="/welcome" element={<WelcomeMessage />} />
         <Route path='/resources' element={<Resources />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
@@ -71,7 +74,7 @@ function App() {
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/story-leadership' element={<StoryLeadership />}></Route>
-        <Route path='/our-values' element={<OurValues/>}></Route>
+        <Route path='/our-values' element={<OurValues />}></Route>
         <Route path='/social-responsibility' element={<SocialResponsibility />}></Route>
         <Route path='/career' element={<Career />}></Route>
 
@@ -80,13 +83,13 @@ function App() {
           <Route path="leaderboard" element={<LeaderBoard></LeaderBoard>}></Route>
           <Route path="goal" element={<Goal></Goal>}></Route>
 
-          <Route path="addtask" element={<RequireManager><AddTask/></RequireManager>}></Route>
-          <Route path="addmember" element={<RequireManager><AddEmployee/></RequireManager>}></Route>
-          <Route path="makeManager" element={<RequireManager><MakeAdmin/></RequireManager>}></Route>
-          
-          <Route path="taskList" element={<RequireManager><Tasks/></RequireManager>}></Route>
-          <Route path="task" element={<UserTask/>}></Route>
-          
+          <Route path="addtask" element={<RequireManager><AddTask /></RequireManager>}></Route>
+          <Route path="addmember" element={<RequireManager><AddEmployee /></RequireManager>}></Route>
+          <Route path="makeManager" element={<RequireManager><MakeAdmin /></RequireManager>}></Route>
+
+          <Route path="taskList" element={<RequireManager><Tasks /></RequireManager>}></Route>
+          <Route path="task" element={<UserTask />}></Route>
+
           <Route path="employeeReview" element={<EmployeeReview></EmployeeReview>}></Route>
           <Route path="managerReview" element={<Review></Review>}></Route>
           <Route path="feedback" element={<Feedback></Feedback>}></Route>
