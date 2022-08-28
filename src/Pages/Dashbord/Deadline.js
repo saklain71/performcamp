@@ -7,8 +7,6 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import { format } from "date-fns";
-import { defaultFormat } from "moment";
 
 
 

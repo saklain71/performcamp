@@ -62,7 +62,7 @@ function App() {
         <Route path="/reviewCheckin" element={<ReviewCheckin />} />
         <Route path="/goalManagement" element={<GoalManagement />} />
         <Route path="/continuousFeedback" element={<ContinuousFeedback />} />
-        <Route path="/pricing" element={<RequireAuth><Pricing/></RequireAuth>} />
+        <Route path="/pricing" element={<RequireAuth><Pricing /></RequireAuth>} />
         <Route path="/makePayment" element={<MakePayment />} />
         <Route path="/confirmPayment/:id" element={<ConfirmPayment />} />
         <Route path="/welcome" element={<WelcomeMessage />} />
