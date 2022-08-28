@@ -21,7 +21,7 @@ const AddCustomerReview = () => {
     reset()
     data.rating = rating
     data.image = user.photoURL
-    fetch(`http://localhost:5000/customerReviews`, {
+    fetch(`https://whispering-gorge-29329.herokuapp.com/customerReviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json"

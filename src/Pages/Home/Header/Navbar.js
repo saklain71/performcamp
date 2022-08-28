@@ -121,14 +121,7 @@ const Navbar = () => {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg overflow-hidden text-center bg-rose-400 text-white ring-1 ring-black ring-opacity-5 cursor-pointer focus:outline-none">
-                    <Menu.Item>
-                        {({ active }) => (
-                          <Link to="/dashboard"   className={classNames(active ? 'bg-teal-500' : '', 'block px-4 py-2 text-sm ')}
-                          >
-                            Dashboard
-                          </Link>
-                        )}
-                      </Menu.Item>
+                    
         
                           <button onClick={handleSignOut} className='border-t-2 hover:text-gray-100 w-full font-bold hover:bg-teal-500 px-4 py-2 text-sm '
                           >

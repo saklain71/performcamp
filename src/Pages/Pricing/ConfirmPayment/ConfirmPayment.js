@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L0iYbHgcyWlDX98TNiADfw3LJxCEDM4jnXBw
 
 const ConfirmPayment = () => {
     const {id}= useParams()
-    const url = `http://localhost:5000/bookings/${id}`;
+    const url = `https://whispering-gorge-29329.herokuapp.com/bookings/${id}`;
     const { data: booking, isLoading, } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',
         headers: {

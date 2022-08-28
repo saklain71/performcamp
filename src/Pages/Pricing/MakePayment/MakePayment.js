@@ -10,7 +10,7 @@ const MakePayment = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://whispering-gorge-29329.herokuapp.com/bookings`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const MakePayment = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are You Sure?')
         if (proceed) {
-            const url = `http://localhost:5000/bookings/${id}`
+            const url = `https://whispering-gorge-29329.herokuapp.com/bookings/${id}`
             fetch(url, {
                 method: "DELETE",
                 headers: {

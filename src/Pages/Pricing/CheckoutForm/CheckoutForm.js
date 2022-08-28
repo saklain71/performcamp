@@ -20,7 +20,7 @@ const CheckoutForm = ({ booking }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://whispering-gorge-29329.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
