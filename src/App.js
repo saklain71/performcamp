@@ -27,6 +27,12 @@ import Customers from './Pages/Customers/Customers';
 
 import MakePayment from './Pages/Pricing/MakePayment/MakePayment';
 import ConfirmPayment from './Pages/Pricing/ConfirmPayment/ConfirmPayment';
+import RequireAuth from './Pages/Shared/RequireAuth';
+import WelcomeMessage from './Pages/Pricing/WelcomeMessage/WelcomeMessage';
+import StoryLeadership from './Pages/Company/StoryLeadership';
+import OurValues from './Pages/Company/OurValues';
+import SocialResponsibility from './Pages/Company/SocialResponsibility';
+import Career from './Pages/Company/Career';
 
 
 
@@ -39,13 +45,15 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/customers" element={<Customers />} />
         <Route path="/overview" element={<Overview />} />
         <Route path="/reviewCheckin" element={<ReviewCheckin />} />
         <Route path="/goalManagement" element={<GoalManagement />} />
         <Route path="/continuousFeedback" element={<ContinuousFeedback />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/pricing" element={<RequireAuth><Pricing /></RequireAuth>} />
         <Route path="/makePayment" element={<MakePayment />} />
         <Route path="/confirmPayment/:id" element={<ConfirmPayment />} />
+        <Route path="/welcome/:transaction" element={<WelcomeMessage />} />
         <Route path='/resources' element={<Resources />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
@@ -53,7 +61,10 @@ function App() {
         <Route path='*' element={<NotFound />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/about' element={<About />}></Route>
-        <Route path='/customers' element={<Customers />}></Route>
+        <Route path='/story-leadership' element={<StoryLeadership />}></Route>
+        <Route path='/our-values' element={<OurValues />}></Route>
+        <Route path='/social-responsibility' element={<SocialResponsibility />}></Route>
+        <Route path='/career' element={<Career />}></Route>
 
         
 

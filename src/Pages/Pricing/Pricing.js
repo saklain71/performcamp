@@ -14,7 +14,7 @@ const Pricing = () => {
 
     const onSubmit = (data) => {
          data.price = (data.employee*data.perHeadPrice).toString()
-        fetch(`https://whispering-gorge-29329.herokuapp.com/bookings`, {
+        fetch(`http://localhost:5000/bookings`, {
      
             method: 'POST',
             headers: {

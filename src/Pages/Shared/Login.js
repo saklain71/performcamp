@@ -4,9 +4,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
-import google from '../../Image/google.png';
+import google from '../../Image/Icons/google.png';
 import useToken from '../../hooks/useToken';
-import Loading from './Loading';
+import Loading from '../../Pages/Shared/Loading';
+import loginBanner from '../../Image/banner/loginBanner.png'
+
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -23,19 +25,19 @@ const Login = () => {
     const [token] = useToken(user || gUser);
     const from = location.state?.from?.pathname || '/';
 
-    useEffect(() =>{  
+    useEffect(() => {
         if (token) {
-          navigate(from, {replace: true});
-      }
-        }, [token, from, navigate]);
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate]);
 
     let signInError;
-    
+
 
     if (error || gError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
-    if(gLoading || loading || resetSending){
+    if (gLoading || loading || resetSending) {
         return <Loading></Loading>
     }
 
@@ -59,10 +61,24 @@ const Login = () => {
     };
 
     return (
-        <div className='flex h-screen items-center justify-center bg-base-100 overflow-visible'>
-            <div className="card w-11/12 lg:w-1/4 shadow-xl
-            ">
-                <div className="card-body bg-gradient-to-r from-yellow-100 to-fuchsia-200">
+        <div className='flex lg:flex-row flex-col-reverse lg:h-screen items-center lg:justify-evenly bg-base-100 overflow-visible bg-gradient-to-r  from-yellow-50  to-fuchsia-100 '>
+
+            <div className=''>
+                <img src={loginBanner} className='lg:max-w-2xl hidden lg:block' alt="" />
+                <div className='text-center'>
+                    <p className='text-lg mt-5 text-center'>If you have any queries, please reach us at</p>
+                    <div className="flex justify-center pb-4 border-r border-gray-300 dark:border-gray-700 px-8 text-gray-800 dark:text-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <polyline points="3 7 12 13 21 7" />
+                        </svg>
+                        <a href='' className="text-sm ml-2 text-blue-500 dark:text-gray-100">info@performcamp.com</a>
+                    </div>
+                </div>
+            </div>
+            <div className="card w-11/12 lg:w-1/4 lg:mt-1 mt-6 mb-3">
+                <div className="card-body bg-gradient-to-l  from-yellow-100 to-fuchsia-200">
                     <h2 className="text-center text-xl mx:text-2xl lg:text-3xl font-bold text-blue-700">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
@@ -124,7 +140,6 @@ const Login = () => {
 
                     <div className="divider">OR</div>
                     <button onClick={() => signInWithGoogle()} className="btn btn-outline"><img className='w-8 h-8' src={google} alt="" />Continue With Google</button>
-
                 </div>
             </div>
         </div>

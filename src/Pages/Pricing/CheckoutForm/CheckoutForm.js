@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { stringify } from '@firebase/util';
+import { Navigate, useNavigate } from 'react-router';
 
 
 
@@ -15,6 +16,8 @@ const CheckoutForm = ({ booking }) => {
     const [clientSecret, setClientSecret] = useState('');
 
     const { _id, price, organization, email, service } = booking;
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('https://whispering-gorge-29329.herokuapp.com/create-payment-intent', {
@@ -45,7 +48,7 @@ const CheckoutForm = ({ booking }) => {
         if (card == null) {
             return;
         }
-       
+
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card,
@@ -75,15 +78,15 @@ const CheckoutForm = ({ booking }) => {
             setTransaction(paymentIntent.id);
             setSuccess('Thanks, Your Payment is Successful.')
             //
-            const payment= {
+            const payment = {
                 service: service,
-                serviceId:_id,
-                transactionId : paymentIntent.id,
+                serviceId: _id,
+                transactionId: paymentIntent.id,
                 organization: organization,
-                price: price    
+                price: price
             }
 
-            fetch(`https://whispering-gorge-29329.herokuapp.com/bookings/${_id}`,{
+            fetch(`http://localhost:5000/bookings/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
@@ -91,14 +94,15 @@ const CheckoutForm = ({ booking }) => {
                 },
                 body: JSON.stringify({ payment })
             })
-            .then(res=>res.json())
-            .then(data=>{
-                setProcessing(false)
-                console.log(data)
-            })
+                .then(res => res.json())
+                .then(data => {
+                    setProcessing(false)
+                    navigate(`/welcome/${paymentIntent.id}`)
+                })
         }
 
     }
+
 
     return (
         <>
@@ -119,7 +123,7 @@ const CheckoutForm = ({ booking }) => {
                         },
                     }}
                 />
-                <button className='btn btn-primary text-white font-bold hover:btn-info btn-sm mt-4 ' type="submit" disabled={!stripe }>
+                <button  className='btn btn-primary text-white font-bold hover:btn-info btn-sm mt-4 ' type="submit" disabled={!stripe}>
                     Pay
                 </button>
             </form>
@@ -128,8 +132,8 @@ const CheckoutForm = ({ booking }) => {
             }
             {
                 success && <div className='text-green-600 font-bold'>
-                    {success} 
-                    <p className='text-black'>Transaction Id: <span className='text-purple-600 text-sm font-normal'>{transaction}</span> </p>
+                    {success}
+                    <p className='text-black'>Transaction Id: <span className='text-purple-600 text-sm font-normal'>{transaction}</span></p>
                 </div>
             }
         </>
