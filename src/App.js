@@ -27,6 +27,7 @@ import Customers from './Pages/Customers/Customers';
 
 import MakePayment from './Pages/Pricing/MakePayment/MakePayment';
 import ConfirmPayment from './Pages/Pricing/ConfirmPayment/ConfirmPayment';
+import DetailedBlog from './Pages/Resources/DetailedBlog';
 
 
 
@@ -54,6 +55,7 @@ function App() {
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/customers' element={<Customers />}></Route>
+        <Route path='/detailedBlog' element={<DetailedBlog />}></Route>
 
         
 
