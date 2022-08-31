@@ -53,7 +53,7 @@ function App() {
         <Route path="/pricing" element={<RequireAuth><Pricing /></RequireAuth>} />
         <Route path="/makePayment" element={<MakePayment />} />
         <Route path="/confirmPayment/:id" element={<ConfirmPayment />} />
-        <Route path="/welcome" element={<WelcomeMessage />} />
+        <Route path="/welcome/:transaction" element={<WelcomeMessage />} />
         <Route path='/resources' element={<Resources />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>

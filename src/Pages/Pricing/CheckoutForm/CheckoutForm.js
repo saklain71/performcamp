@@ -97,12 +97,12 @@ const CheckoutForm = ({ booking }) => {
                 .then(res => res.json())
                 .then(data => {
                     setProcessing(false)
-                    navigate('/welcome')
-                    console.log(data)
+                    navigate(`/welcome/${paymentIntent.id}`)
                 })
         }
 
     }
+
 
     return (
         <>
@@ -123,7 +123,7 @@ const CheckoutForm = ({ booking }) => {
                         },
                     }}
                 />
-                <button className='btn btn-primary text-white font-bold hover:btn-info btn-sm mt-4 ' type="submit" disabled={!stripe}>
+                <button  className='btn btn-primary text-white font-bold hover:btn-info btn-sm mt-4 ' type="submit" disabled={!stripe}>
                     Pay
                 </button>
             </form>
@@ -133,7 +133,7 @@ const CheckoutForm = ({ booking }) => {
             {
                 success && <div className='text-green-600 font-bold'>
                     {success}
-                    <p className='text-black'>Transaction Id: <span className='text-purple-600 text-sm font-normal'>{transaction}</span> </p>
+                    <p className='text-black'>Transaction Id: <span className='text-purple-600 text-sm font-normal'>{transaction}</span></p>
                 </div>
             }
         </>
