@@ -106,7 +106,7 @@ const Career = () => {
                     </div>
 
                     <div class="shadow-xl bg-cover bg-center transform duration-500 hover:-translate-y-2 cursor-pointer group rounded-2xl">
-                        <div className='border rounded-2xl bg-opacity-20 flex flex-wrap flex-col hover:bg-opacity-75 transform duration-300'>
+                        
                             <img src={marketing} className="lg:max-w-full rounded-t-2xl" alt="" />
                             <div className='pb-10 pt-5 items-center lg:px-4 px-2 bg-teal-500 rounded-b-2xl'>
                                 <h2 className="text-2xl lg:text-4xl font-bold text-white transform translate-y-20 group-hover:translate-y-0 duration-300 mb-5">Marketing</h2>
@@ -114,7 +114,7 @@ const Career = () => {
                                 </div>
                                 <p className='text-xl font-bold opacity-0 text-white  group-hover:opacity-80 transform duration-500'>Telling our story to the world.</p>
                             </div>
-                        </div>
+                        
                     </div>
 
                     <div class="shadow-xl bg-cover bg-center transform duration-500 hover:-translate-y-2 cursor-pointer group rounded-2xl">
@@ -124,7 +124,7 @@ const Career = () => {
                                 <h2 className="text-2xl lg:text-4xl font-bold text-white transform translate-y-20 group-hover:translate-y-0 duration-300 mb-5">Customer Strategy</h2>
                                 <div class="bg-green-700 w-40 flex h-2  rounded-full mb-5 transform translate-y-20 group-hover:translate-y-0 duration-300">
                                 </div>
-                                <p className='text-xl font-bold opacity-0 text-white  group-hover:opacity-80 transform duration-500'>Helping customers leverage our products.</p>
+                                <p className='text-xl font-bold opacity-0 text-white  group-hover:opacity-80 transform duration-500'>Helping to leverage our products.</p>
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,7 @@ const Career = () => {
                                 <h2 className="text-2xl lg:text-4xl font-bold text-white transform translate-y-20 group-hover:translate-y-0 duration-300 mb-5">Technology</h2>
                                 <div class="bg-green-700 w-40 flex h-2  rounded-full mb-5 transform translate-y-20 group-hover:translate-y-0 duration-300">
                                 </div>
-                                <p className='text-xl font-bold opacity-0 text-white  group-hover:opacity-80 transform duration-500'>Innovating and pushing the industry forward. To build an industrial environment.</p>
+                                <p className='text-xl font-bold opacity-0 text-white  group-hover:opacity-80 transform duration-500'>Innovating and pushing the industry forward.</p>
                             </div>
                         </div>
                     </div>

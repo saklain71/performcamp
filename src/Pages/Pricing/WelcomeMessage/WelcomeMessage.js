@@ -12,11 +12,12 @@ const WelcomeMessage = () => {
         <div className='lg:h-screen lg:py-0 py-16 flex justify-center items-center bg-green-100'>
             <div class="card lg:max-w-xl bg-green-50 shadow-xl text-xl">
                 <div class="card-body">
-                    <p>Hello <b>{user.displayName}!</b></p>
+                    <p>Hello <b>{user?.displayName}!</b></p>
                     <br />
                     <p>I just wanted to drop you a quick note and let you know that I received your recent payment. Your Transaction Id is: <sapn className="text-purple-500">{transaction}</sapn></p>
                     <br />
-                    <p>Thank you so much. I really appreciate it.</p>
+                    <p>Go to this link to use dashboard: <br /><a href="https://performcamp-8967f.web.app"><sapn className="text-purple-500">https://performcamp-8967f.web.app</sapn></a></p><br />
+                    <p>Thank you so much for your time and consideration.</p>
                     <p>Have a great day!</p>
                     <br />
                     <p>Rashed Sabbir,</p>
