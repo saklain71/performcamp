@@ -18,15 +18,14 @@ const Footer = () => {
                 <Link to="/reviewCheckin" className='link link-hover'>Review and Check in</Link>
                 <Link to="/goalManagement" className='link link-hover'>Goal Management</Link>
                 <Link to="/continuousFeedback" className='link link-hover'>Continuos Feedback</Link>
-                {/* <a class="link link-hover">Branding</a>
-                <a class="link link-hover">Design</a>
-                <a class="link link-hover">Marketing</a>
-                <a class="link link-hover">Advertisement</a> */}
+                
             </div>
             <div>
                 <span class="footer-title text-xl">Company</span>
                 <a href='/about' class="link link-hover">About us</a>
                 <a href='/contact' class="link link-hover">Contact</a>
+                <a href='/story-leadership' class="link link-hover">Our story</a>
+                <a href='/career' class="link link-hover">Career</a>
                 
             </div>
             <div>

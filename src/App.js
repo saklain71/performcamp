@@ -27,6 +27,7 @@ import Customers from './Pages/Customers/Customers';
 
 import MakePayment from './Pages/Pricing/MakePayment/MakePayment';
 import ConfirmPayment from './Pages/Pricing/ConfirmPayment/ConfirmPayment';
+import DetailedBlog from './Pages/Resources/DetailedBlog';
 import RequireAuth from './Pages/Shared/RequireAuth';
 import WelcomeMessage from './Pages/Pricing/WelcomeMessage/WelcomeMessage';
 import StoryLeadership from './Pages/Company/StoryLeadership';
@@ -61,6 +62,8 @@ function App() {
         <Route path='*' element={<NotFound />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/about' element={<About />}></Route>
+        <Route path='/customers' element={<Customers />}></Route>
+        <Route path='/detailedBlog' element={<DetailedBlog />}></Route>
         <Route path='/story-leadership' element={<StoryLeadership />}></Route>
         <Route path='/our-values' element={<OurValues />}></Route>
         <Route path='/social-responsibility' element={<SocialResponsibility />}></Route>

@@ -49,7 +49,7 @@ const HappyCompanies = () => {
             <h2 className='text-5xl mt-20 font-bold text-center mb-2'>Clients Project</h2>
             <div className='grid lg:grid-cols-2 grid-cols-1 items-center shadow-lg lg:mb-20'>
                 <div className='pt-20 p-5'>
-                    <img src={bonding} className="lg:h-80" alt="" />
+                    <img src={bonding} className="lg:h-80 rounded-xl" alt="" />
                 </div>
                 <div className='lg:pt-20 p-5'>
                     <p className='lg:text-3xl text-2xl'>PeformCamp provides streamlined accessibility and connection for global organizations.
