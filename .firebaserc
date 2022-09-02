@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "performcamp-home",
+    "hosting": "performcamp-home"
+  },
+  "targets": {}
+}
