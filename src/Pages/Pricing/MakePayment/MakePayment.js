@@ -65,7 +65,7 @@ const MakePayment = () => {
                                     <h2>Total Amount: <span className="text-2xl font-bold">${booking?.price}</span></h2>
                                 </div>
                                 <div class="card-actions justify-end items-center">
-                                    {(booking.price && !booking.paid) && <Link class="btn btn-sm btn-primary" to={`/confirmPayment/${booking._id}`}>Buy Now</Link>}
+                                    {(booking.price && !booking.paid) && <Link class="btn btn-sm btn-primary" to={`/confirmPayment/${booking._id}`}>Pay Now</Link>}
                                     {(booking.price && booking.paid) && <span className='text-green-600 font-bold'>Paid</span>}
                                     {!booking.paid && <button onClick={() => handleDelete(booking._id)} className='btn btn-link btn-sm text-error'>Cancel</button>}
                                 </div>

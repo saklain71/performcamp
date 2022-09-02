@@ -18,7 +18,7 @@ const Resources = () => {
       <div className='text-center'>
         <h2 className='text-4xl font-bold'>Performance Management Resources</h2>
 
-        <p className='py-6 '>A practical look at building and implementing your perfect performance management process.</p>
+        <p className='py-6 text-xl'>A practical look at building and implementing your perfect performance management process.</p>
       </div>
       <div class="card lg:card-side  lg:px-36 bg-base-100 ">
         <figure><img className=' md:w-96 lg:w-96 rounded-l-lg' src={resource_1} alt="Album" /></figure>
@@ -36,10 +36,10 @@ const Resources = () => {
 
         <div class="overflow-x-auto my-4">
           {/* <button class="btn btn-error hover:bg-teal-600  mx-6">All</button> */}
-          <button class="btn btn-error hover:bg-teal-600 mx-6">Performance Management</button>
-          <button class="btn btn-error hover:bg-teal-600 mx-6">Employee Reviews</button>
-          <button class="btn btn-error hover:bg-teal-600 mx-6">Continuous Feedback</button>
-          <button class="btn btn-error hover:bg-teal-600 mx-6">Goal Management</button>
+          <button class="btn btn-error hover:bg-teal-600 text-white my-2 mx-6">Performance Management</button>
+          <button class="btn btn-error hover:bg-teal-600 text-white my-2 mx-6">Employee Reviews</button>
+          <button class="btn btn-error hover:bg-teal-600 text-white my-2 mx-6">Continuous Feedback</button>
+          <button class="btn btn-error hover:bg-teal-600 text-white my-2 mx-6">Goal Management</button>
         </div>
 
       </div>
@@ -47,7 +47,7 @@ const Resources = () => {
 
         <div class="w-full lg:w-1/2 p-3">
           <div class="flex flex-col lg:flex-row rounded  border  shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_2} />
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_2} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">What Do Performance Management Systems Look Like in 2022?</h2>
               <div class="badge badge-accent badge-outline my-2">Goal Management</div>
@@ -59,12 +59,12 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_3} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_3} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">Useful HR Tools for Performance Management in 2022</h2>
               <div class="badge badge-accent badge-outline my-2">Performance Management</div>
-              <p class="text-grey-darker text-base">Do your HR tools for performance management help employees improve?
+              <p class="text-grey-darker text-lg">Do your HR tools for performance management help employees improve?
 
                 In one survey, just 14% of employees</p>
                 <a href="/detailedBlog"><button class="btn btn-link font-bold text-blue-400 hover:no-underline ">Continue Reading <svg xmlns="http://www.w3.org/2000/svg" className="transition transform hover:-translate-x-1  h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -74,8 +74,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_4} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_4} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">Building a Business Case for Performance Management</h2>
               <div class="badge badge-accent badge-outline my-2">Employee Review</div>
@@ -87,8 +87,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_5} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_5} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">5 Perks of an Online Performance Management System</h2>
               <div class="badge badge-accent badge-outline my-2">Goal Management</div>
@@ -100,8 +100,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_6} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_6} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">2022 Performance Evaluation Process Flowchart, Tips & Timeline</h2>
               <div class="badge badge-accent badge-outline my-2">Performance Management</div>
@@ -113,8 +113,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_7} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_7} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">The Perk of Modern Performance Management</h2>
               <div class="badge badge-accent badge-outline my-2">Goal Management</div>
@@ -126,8 +126,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_8} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_8} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">Setting Up PerformYard is Easy—Here’s Why</h2>
               <div class="badge badge-accent badge-outline my-2">Performance Management</div>
@@ -139,8 +139,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_9} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_9} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">Free Employee Goal Setting Template</h2>
               <div class="badge badge-accent badge-outline my-2">Employee Review</div>
@@ -152,8 +152,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_10} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_10} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">A Playbook for Aligning Employee Goals with Corporate Objectives</h2>
               <div class="badge badge-accent badge-outline my-2">Performance Management</div>
@@ -165,8 +165,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_11} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_11} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">How Apple Does Performance Management (And Ideas for You to Consider)</h2>
               <div class="badge badge-accent badge-outline my-2">Employee Review</div>
@@ -178,8 +178,8 @@ const Resources = () => {
           </div>
         </div>
         <div class="w-full lg:w-1/2 p-3">
-          <div class="flex flex-col lg:flex-row rounded  border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-64 flex-none bg-cover" src={resource_12} />
+          <div class="flex flex-col lg:flex-row rounded  border shadow-lg">
+            <img class="block h-auto w-full lg:w-80 flex-none bg-cover" src={resource_12} />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <h2 class="text-black font-bold text-xl mb-2 leading-tight">The Purpose of 90-Day Reviews for New Employees</h2>
               <div class="badge badge-accent badge-outline my-2">Goal Management</div>

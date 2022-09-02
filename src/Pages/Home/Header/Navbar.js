@@ -67,7 +67,18 @@ const Navbar = () => {
                     </li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><Link to="/pricing" href>Pricing</Link></li>
                     <li className=" hover:-translate-y-1 hover:scale-90"><a href='/resources'>Resources</a></li>
-
+                    <li className='hover:-translate-y-1 hover:scale-90' tabindex="0">
+                        <a>
+                            Company
+                            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                        </a>
+                        <ul class="p-2 hover:-translate-y-1 bg-white hover:scale-90">
+                            <li className='text-gray-500'><Link to="/story-leadership">Our Story and Leadership</Link></li>
+                            <li className='text-gray-500'><Link to="/our-values">Our values</Link></li>
+                            <li className='text-gray-500'><Link to="/social-responsibility">Social Responsibility</Link></li>
+                            <li className='text-gray-500'><Link to="/career">Career</Link></li>
+                        </ul>
+                    </li>
                     <li><a href="https://www.youtube.com/watch?v=CUFIHw9VuQY&t=1s"><button className='hover:-translate-y-1 hover:scale-110 btn btn-error text-white font-bold'>Get A Demo</button></a></li>
                 </ul>
             </div>

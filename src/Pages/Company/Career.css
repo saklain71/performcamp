@@ -1,0 +1,61 @@
+.hover-to-show span { 
+    opacity: 0;
+   /* position: absolute; */
+  line-height: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.hover-to-show {
+  position: relative;
+  display: block;
+  height: 0;
+  }
+
+.hover-to-show-link:hover .hover-to-show span{
+  -webkit-animation: show 2s forwards; /* Safari 4+ */
+  -moz-animation:    show 2s forwards; /* Fx 5+ */
+  -o-animation:      show 2s forwards; /* Opera 12+ */
+  animation:         show 2s forwards; /* IE 10+, Fx 29+ */
+}
+
+.hover-to-show-link:hover .hover-to-show {
+  -webkit-animation: grow 2s forwards; /* Safari 4+ */
+  -moz-animation:    grow 2s forwards; /* Fx 5+ */
+  -o-animation:      grow 2s forwards; /* Opera 12+ */
+  animation:         grow 2s forwards; /* IE 10+, Fx 29+ */
+  
+}
+
+@-webkit-keyframes show {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes show {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes show {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes show {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes grow {
+  0%   { height: 0; }
+  100% { height: 20px; }
+}
+@-moz-keyframes grow {
+  0%   { height: 0; }
+  100% { height: 20px; }
+}
+@-o-keyframes grow {
+  0%   { height: 0; }
+  100% { height: 20px; }
+}
+@keyframes grow {
+  0%   { height: 0; }
+  100% { height: 20px; }
+}
