@@ -86,7 +86,7 @@ const CheckoutForm = ({ booking }) => {
                 price: price
             }
 
-            fetch(`http://localhost:5000/bookings/${_id}`, {
+            fetch(`https://whispering-gorge-29329.herokuapp.com/bookings/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
